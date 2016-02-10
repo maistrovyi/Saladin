@@ -8,11 +8,11 @@
      </script>
  </head>
  <body>
-   <p><b>Input 1:</b><br>
+   <p><strong>Location :</strong><br>
    <input type="text" size="40">
    </p>
 
-   <p><b>Input 2:</b><br>
+   <p><strong>Material:</strong><br>
    <input type="text" size="40">
    </p>
 

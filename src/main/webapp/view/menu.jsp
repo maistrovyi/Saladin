@@ -5,7 +5,8 @@
   
   <script language = "javascript">
 	function action1()
-	{document.getElementById("info").innerHTML = "Action 1 clicked!";}
+    {open("check_stock_content.jsp", "testing", "asd", false)}
+//    {document.getElementById("info").innerHTML = "Action 1 clicked!";}
 
     function action2()
     {document.getElementById("info").innerHTML = "Action 2 clicked!";}
@@ -15,9 +16,12 @@
   </script>
 
  </head>
- <body style="background: #f0f0f0">
+ <br style="background: #f0f0f0">
 
-<p><input type = "button" value = "Action 1" name = "action1" OnClick = "action1()"></p>
+<p><input type = "button" value = "Check Stock" name = "checkstockAction" OnClick = "action1()"></p>
+<a href="http://www.google.com" target="main_page">Google</a>
+ <br /><br />
+<a href="http://www.google.com" target = "CHECK_STOCK_CONTENT">Check Stock Content</a>
 <p><input type = "button" value = "Action 2" name = "action2" OnClick = "action2()"></p>
 <p><input type = "button" value = "Action 3" name = "action3" OnClick = "action3()"></p>
 
