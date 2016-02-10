@@ -8,6 +8,7 @@
      </script>
  </head>
  <body>
+   <p><strong>Action 2</strong><br>
    <p><strong>Location :</strong><br>
    <input type="text" size="40">
    </p>
