@@ -7,9 +7,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-/**
- * Created by Vladimir Maystrovoy on 2/7/2016.
- */
 @Configuration
 @EnableWebMvc
 public class AppConfig extends WebMvcConfigurerAdapter {
@@ -20,7 +17,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         internalResourceViewResolver.setSuffix(".jsp");
         return internalResourceViewResolver;
     }
-
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
