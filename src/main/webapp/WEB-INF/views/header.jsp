@@ -11,7 +11,7 @@
    <h1>LIFECELL</h1>
   </div>
   <div id="menu">
-   <div>HOME PAGE</div>
+   <div><a href="/">HOME PAGE</a></div>
    <div class="line"></div>
    <div><a href="/check_stock" name="check_stock">CHECK STOCK</a></div>
    <div><a href="/action_2" name="action_2">ACTION 2</a></div>

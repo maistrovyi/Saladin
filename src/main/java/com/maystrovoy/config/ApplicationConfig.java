@@ -16,4 +16,14 @@ public class ApplicationConfig {
 //        dataSource.setPassword("INTEGRATION");
 //        return dataSource;
 //    }
+
+//    @Bean
+//    public DriverManagerDataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+//        dataSource.setUrl("localhost:1521");
+//        dataSource.setUsername("maystrovoy");
+//        dataSource.setPassword("");
+//        return dataSource;
+//    }
 }
