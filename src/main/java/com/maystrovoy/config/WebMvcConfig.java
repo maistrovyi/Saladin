@@ -9,11 +9,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-public class AppConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+    private static final String VIEWS = "/WEB-INF/views/";
+
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-        internalResourceViewResolver.setPrefix("/");
+        internalResourceViewResolver.setPrefix(VIEWS);
         internalResourceViewResolver.setSuffix(".jsp");
         return internalResourceViewResolver;
     }

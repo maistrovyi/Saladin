@@ -15,7 +15,7 @@ public class CheckStockController {
     private CheckStockService checkStockService;
 
     @RequestMapping(value = "check_stock", method = RequestMethod.GET)
-    public java.lang.String showCheckStockForm() {
+    public String showCheckStockForm() {
         return "check_stock";
     }
 
@@ -24,7 +24,8 @@ public class CheckStockController {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
         checkStockService.processCheckStock(location, material);
-        return "check_stock";
+        System.out.println(location);
+        System.out.println(material);
+        return "redirect:/check_stock";
     }
-
 }
