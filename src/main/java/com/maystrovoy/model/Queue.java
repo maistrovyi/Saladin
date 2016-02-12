@@ -6,6 +6,11 @@ public class Queue {
 
     private String material;
 
+    public Queue(String location, String material) {
+        this.location = location;
+        this.material = material;
+    }
+
     public String getLocation() {
         return location;
     }

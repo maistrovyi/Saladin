@@ -11,5 +11,6 @@ public class CheckStockService {
 
     public void processCheckStock(String location, String material) {
         checkStockDAO.putIntoQueue(location, material);
+//        checkStockDAO.putIntoQueue(new Queue(location, material));
     }
 }
