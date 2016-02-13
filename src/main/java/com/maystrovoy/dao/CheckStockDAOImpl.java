@@ -1,13 +1,13 @@
 package com.maystrovoy.dao;
 
-import com.maystrovoy.model.Queue;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
 public class CheckStockDAOImpl implements CheckStockDAO {
 
-    Thread t;
+    Thread threadInsertingData;
+
     private JdbcTemplate jdbcTemplate;
 
     public CheckStockDAOImpl(DataSource dataSource) {
@@ -16,31 +16,27 @@ public class CheckStockDAOImpl implements CheckStockDAO {
 
     public void putIntoQueue(final String location, String material) {
         final String finalMaterial = material;
+        final String finalLocation = location;
 
-//TODO        ThreadPoolExecutor executor = ThreadFactory
-        if (t==null || !t.isAlive()) {
-            t = new Thread(new Runnable() {
+        if (threadInsertingData == null || !threadInsertingData.isAlive()) {
+            threadInsertingData = new Thread(new Runnable() {
                 public void run() {
-                    putIntoQueue(new Queue(location, finalMaterial));
-//                String sql = "INSERT INTO queue (location, material)" + " VALUES (?, ?)";
-//                jdbcTemplate.update(sql, location, finalMaterial);
+                    String sql = "INSERT INTO queue (location, material)" + " VALUES (?, ?)";
+                    jdbcTemplate.update(sql, finalLocation, finalMaterial);
                 }
             });
-            t.setName("WRITING DB THREAD");
-            t.start();
-        }else{
-            t.interrupt();
+            threadInsertingData.setName("WRITING DB THREAD");
+            threadInsertingData.start();
+        } else {
+            threadInsertingData.interrupt();
             System.out.println("Thread interruption");
         }
 
 
     }
 
-    public void putIntoQueue(final Queue queue) {
-        for (int i = 0; i < 1000; i++){
-            String sql = "INSERT INTO queue (location, material)" + " VALUES (?, ?)";
-            jdbcTemplate.update(sql, queue.getLocation(), queue.getMaterial());
-        }
-
-    }
+//    public void putIntoQueue(final Queue queue) {
+//        String sql = "INSERT INTO queue (location, material)" + " VALUES (?, ?)";
+//        jdbcTemplate.update(sql, queue.getLocation(), queue.getMaterial());
+//    }
 }

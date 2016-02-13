@@ -22,10 +22,7 @@ public class CheckStockController {
     public String processCheckStockForm(HttpServletRequest request) {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
-
         checkStockService.processCheckStock(location, material);
-//        System.out.println(location);
-//        System.out.println(material);
         return "redirect:/check_stock";
     }
 }

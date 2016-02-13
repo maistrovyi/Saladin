@@ -1,48 +1,48 @@
    body {
-    font-family: Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
-    margin: 0; /* Обнуляем отступы браузера */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
    }
    h1 {
-    font-size: 36px; /* Размер шрифта */
-    font-weight: bold; /* Жирное начертание */
-    margin: 0; /* Убираем отступы */
-    color: #0000FF; /* Цвет текста */
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #0000FF;
    }
    h2 {
-    margin-top: 0; /* Убираем отступ сверху */
+    margin-top: 0;
    }
-   #head { /* Верхний блок */
-    background: #FFD700; /* Цвет фона */
-    padding: 10px; /* Поля вокруг */
+   #head {
+    background: #FFD700;
+    padding: 10px;
    }
-   #menu { /* Левая колонка */
+   #menu {
     position: fixed;
-    float: left; /* Обтекание справа */
-    border: 1px solid #333; /* Параметры рамки вокруг */
-    width: 200px; /* Ширина колонки */
-    padding: 5px; /* Поля вокруг текста */
-    margin: 10px 10px 20px 5px; /* Значения отступов */
+    float: left;
+    border: 1px solid #333;
+    width: 200px;
+    padding: 5px;
+    margin: 10px 10px 20px 5px;
    }
    #menu div {
-    padding: 2px; /* Поля вокруг ссылок */
+    padding: 2px;
    }
    #menu a { 
-    display: block; /* Отображать ссылку как блок */
-    padding: 2px; /* Поля вокруг ссылок */
-    margin: 1px; /* Отступы вокруг */
-    font-size: 0.9em; /* Размер текста */
-    text-decoration: none; /* Убираем подчеркивание текста */
+    display: block;
+    padding: 2px;
+    margin: 1px;
+    font-size: 0.9em;
+    text-decoration: none;
    }
    #menu a:hover { 
-    background: #faf3d2; /* Цвет фона */
-    border: 1px dashed #634f36; /* Добавление пунктирной рамки */
-    margin: 0; /* Убираем поля */
+    background: #faf3d2;
+    border: 1px dashed #634f36;
+    margin: 0;
    }
-   #content { /* Правая колонка */
-    margin: 10px 5px 20px 225px; /* Значения отступов */
-    padding: 5px; /* Поля вокруг текста */
-    border: 1px solid #333; /* Параметры рамки */
+   #content {
+    margin: 10px 5px 20px 225px;
+    padding: 5px;
+    border: 1px solid #333;
    }
    .line {
-    border-bottom: 1px groove #333; /* Линия между ссылками */
+    border-bottom: 1px groove #333;
    }
