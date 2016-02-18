@@ -7,5 +7,4 @@ public interface CheckStockDAO {
 
     void putIntoQueue(String location, String material);
 
-//    void putIntoQueue(Queue queue);
 }
