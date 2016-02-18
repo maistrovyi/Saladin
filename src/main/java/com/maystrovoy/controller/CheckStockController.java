@@ -10,11 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class CheckStockController {
+
     @Autowired
     private CheckStockService checkStockService;
 
     @RequestMapping(value = "check_stock", method = RequestMethod.GET)
     public String showCheckStockForm() {
+
         return "check_stock";
     }
 
@@ -23,6 +25,8 @@ public class CheckStockController {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
         checkStockService.processCheckStock(location, material);
+
         return "redirect:/check_stock";
     }
+
 }

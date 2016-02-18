@@ -13,6 +13,7 @@ public class ExceptionHandlerController {
         ModelAndView mav = new ModelAndView("error_page");
         mav.addObject("header", "Oooooops 404");
         mav.addObject("message", "There are no mapping for: " + exception.getRequestURL());
+
         return mav;
     }
 
@@ -22,6 +23,8 @@ public class ExceptionHandlerController {
         ModelAndView mav = new ModelAndView("error_page");
         mav.addObject("header", "Unexpected exception");
         mav.addObject("message", "There error is: " + exception.getMessage());
+
         return mav;
     }
+
 }

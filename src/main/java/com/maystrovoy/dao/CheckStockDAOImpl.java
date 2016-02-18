@@ -16,4 +16,5 @@ public class CheckStockDAOImpl implements CheckStockDAO {
         String sql = "INSERT INTO queue (location, material)" + " VALUES (?, ?)";
         jdbcTemplate.update(sql, location, material);
     }
+
 }
