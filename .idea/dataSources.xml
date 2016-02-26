@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3307071133">
+    <data-source source="LOCAL" name="Oracle -" uuid="8a7fce3e-8f2c-42da-a448-571015e49d25">
+      <driver-ref>oracle</driver-ref>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@MAXIMO2T</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="TNSADMIN_DIR" value="$USER_HOME$/Desktop" />
+      </jdbc-additional-properties>
+    </data-source>
+  </component>
+</project>

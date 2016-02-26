@@ -8,6 +8,7 @@
     <artifactId>Spring4WebMVC</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -22,9 +23,9 @@
         <dependency>
             <groupId>ojdbc</groupId>
             <artifactId>ojdbc</artifactId>
-            <version>14</version>
+            <version>12</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/java/com/maystrovoy/lib/ojdbc6.jar</systemPath>
+            <systemPath>${basedir}/src/main/java/com/maystrovoy/lib/classes12.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -32,4 +33,5 @@
             <version>4.1.4.RELEASE</version>
         </dependency>
     </dependencies>
+
 </project>
