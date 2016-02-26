@@ -15,8 +15,10 @@
         <p> web pages based on HTML, XML, or other document types. Released in 1999 by Sun Microsystems, JSP</p>
         <p> is similar to PHP and ASP, but it uses the Java programming language.</p></h5>
     <form method="post" action="check_stock">
-        <p>Location: <input type="text" name="location"/></p>
-        <p>Material: <input type="text" name="material"/></p>
+        <p><h4>Location:</h4></p>
+        <p><input type="text" name="location"/></p>
+        <p><h4>Material:</h4></p>
+        <P><input type="text" name="material"/></p>
         <p><input type="submit" value="Check Stock" class="button"/></p>
     </form>
 </div>
