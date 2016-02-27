@@ -6,6 +6,7 @@
     <title>Check Stock</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
+    <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
