@@ -9,7 +9,7 @@
 <body>
 <nav id="nav">
     <li><img src="/resources/images/logo.gif"/></li>
-    <li><a href="/">HOME</a></li>
+    <li><a href="/home">HOME</a></li>
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/action_2">ACTION 2</a></li>
     <li><a href="/action_3">ACTION 3</a></li>

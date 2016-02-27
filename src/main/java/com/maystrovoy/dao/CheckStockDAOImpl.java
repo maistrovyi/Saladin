@@ -13,7 +13,8 @@ public class CheckStockDAOImpl implements CheckStockDAO {
     }
 
     public void putIntoQueue(String location, String material) {
-        String sql = "INSERT INTO queue (objectid, objecttype, username, queueid, status, startdate, message) VALUES (?,10,'sapuser',queue_seq.nextval,'ACTIVE',sysdate,'')";
+        String sql = "INSERT INTO queue (objectid, objecttype, username, queueid, status, startdate, message) VALUES " +
+                "(?,10,'sapuser',queue_seq.nextval,'ACTIVE',sysdate,'')";
         jdbcTemplate.update(sql, location + "-" + material);
     }
 }
