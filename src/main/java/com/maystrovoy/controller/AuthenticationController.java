@@ -1,26 +1,20 @@
-//package com.maystrovoy.controller;
-//
-//import com.maystrovoy.service.UserService;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.servlet.ModelAndView;
-//
-//import javax.inject.Inject;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpSession;
-//
-//@Controller
-//public class AuthenticationController {
-//
+package com.maystrovoy.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class AuthenticationController {
+
 //    @Inject
 //    private UserService userService;
-//
-//    @RequestMapping(value = "/authentication", method = RequestMethod.GET)
-//    private String showAuthenticationForm() {
-//        return "authentication";
-//    }
-//
+
+    @RequestMapping(value = "/authentication", method = RequestMethod.GET)
+    private String showAuthenticationForm() {
+        return "authentication";
+    }
+
 //    @RequestMapping(value = "/authentication", method = RequestMethod.POST)
 //    private ModelAndView checkAuthenticationData(HttpServletRequest request) {
 //        ModelAndView mav = new ModelAndView("authentication");
@@ -38,4 +32,4 @@
 //        httpSession.invalidate();
 //        return "authentication";
 //    }
-//}
+}
