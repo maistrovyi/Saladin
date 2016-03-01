@@ -1,8 +1,8 @@
 package com.maystrovoy.config;
 
-import com.maystrovoy.dao.CheckStockDAO;
-import com.maystrovoy.dao.CheckStockDAOImpl;
+import com.maystrovoy.Application;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -17,6 +17,7 @@ import javax.persistence.EntityManagerFactory;
 import java.util.Properties;
 
 @Configuration
+@ComponentScan(basePackageClasses = Application.class)
 @EnableTransactionManagement
 public class ApplicationConfig {
 
@@ -29,12 +30,6 @@ public class ApplicationConfig {
         dataSource.setPassword("INTEGRATION");
 
         return dataSource;
-    }
-
-    @Bean
-    public CheckStockDAO getCheckStockDAO() {
-
-        return new CheckStockDAOImpl(dataSource());
     }
 
     @Bean

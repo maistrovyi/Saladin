@@ -9,42 +9,41 @@ import java.util.Date;
 public class Queue implements Serializable {
 
     @Id
-    @SequenceGenerator(name="oracle_jpa_seq",
-            sequenceName="oracle_jpa_seq",
-            allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="oracle_jpa_seq")
-
+    @SequenceGenerator(name="queue_seq", sequenceName="queue_seq", allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="queue_seq")
     @Column(name = "QUEUEID")
     private long queueId;
-
     @Column(name = "OBJECTID")
-    private String objectId;
-
+    private String targetObject;
     @Column(name = "OBJECTTYPE")
     private int objectType;
-
     @Column(name = "STATUS")
     private String status;
-
     @Column(name = "STARTDATE")
     private Date startDate;
-
     @Column(name = "FINISHDATE")
     private Date finishDate;
-
     @Column(name = "USERNAME")
     private String userName;
-
     @Column(name = "MESSAGE")
     private String message;
 
     public Queue() {
     }
 
-    public Queue(long queueId, String objectId, int objectType, String status, Date startDate, Date finishDate, String userName, String message) {
+    public Queue(String targetObject, String userName, int objectType) {
+        this.targetObject = targetObject;
+        this.userName = userName;
+        this.objectType = objectType;
+        status = "ACTIVE";
+        startDate = new Date();
+        finishDate = null;
+        message = null;
+    }
+
+    public Queue(long queueId, String targetObject, int objectType, String status, Date startDate, Date finishDate, String userName, String message) {
         this.queueId = queueId;
-        this.objectId = objectId;
+        this.targetObject = targetObject;
         this.objectType = objectType;
         this.status = status;
         this.startDate = startDate;
@@ -61,12 +60,12 @@ public class Queue implements Serializable {
         this.queueId = queueId;
     }
 
-    public String getObjectId() {
-        return objectId;
+    public String getTargetObject() {
+        return targetObject;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
+    public void setTargetObject(String targetObject) {
+        this.targetObject = targetObject;
     }
 
     public int getObjectType() {
