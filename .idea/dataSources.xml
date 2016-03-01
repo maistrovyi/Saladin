@@ -9,6 +9,7 @@
       <jdbc-additional-properties>
         <property name="TNSADMIN_DIR" value="$USER_HOME$/Desktop" />
       </jdbc-additional-properties>
+      <default-dialect>Oracle</default-dialect>
     </data-source>
   </component>
 </project>
