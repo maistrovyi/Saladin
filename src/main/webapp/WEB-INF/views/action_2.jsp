@@ -4,7 +4,7 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  <title>Action 2</title>
- <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/general_style.css">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
