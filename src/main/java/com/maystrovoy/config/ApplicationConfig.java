@@ -1,9 +1,6 @@
 package com.maystrovoy.config;
 
-import com.maystrovoy.Application;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,8 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManagerFactory;
 import java.util.Properties;
 
-@Configuration
-@ComponentScan(basePackageClasses = Application.class)
 @EnableTransactionManagement
 public class ApplicationConfig {
 
@@ -28,7 +23,6 @@ public class ApplicationConfig {
         dataSource.setUrl("jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T");
         dataSource.setUsername("MXSAP");
         dataSource.setPassword("INTEGRATION");
-
         return dataSource;
     }
 
@@ -43,7 +37,6 @@ public class ApplicationConfig {
         jpaProperties.setProperty("hibernate.hbm2ddl.auto", "update");
         jpaProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
         em.setJpaProperties(jpaProperties);
-
         return em;
     }
 
@@ -51,13 +44,11 @@ public class ApplicationConfig {
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
-
         return transactionManager;
     }
 
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
-
         return new PersistenceExceptionTranslationPostProcessor();
     }
 

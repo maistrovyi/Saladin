@@ -17,8 +17,8 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml</file>
+        <fileset id="fileset" name="Spring Application Context " removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/maystrovoy/config/WebMvcConfig.java</file>
         </fileset>
       </configuration>
     </facet>
