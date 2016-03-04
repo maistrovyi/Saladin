@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class AuthenticationController {
@@ -22,12 +24,12 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/authentication", method = RequestMethod.POST)
-    private ModelAndView checkAuthenticationData(HttpServletRequest request) {
+    private ModelAndView checkAuthenticationData(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         ModelAndView mav = new ModelAndView("authentication");
         String authenticationError = personService.checkPersonAuthentication(request);
-        if(authenticationError != null){
+        if (authenticationError != null) {
             mav.addObject("authentication_error", authenticationError);
-        } else{
+        } else {
             mav.setViewName("redirect:/home");
         }
         return mav;

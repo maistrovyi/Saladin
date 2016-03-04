@@ -2,6 +2,7 @@ package com.maystrovoy.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Person implements Serializable {
     @Column(name = "SECOND_NAME")
     private String  secondName;
     @Column(name = "CREATION_DATE")
-    private Date  creationDate;
+    private Date creationDate;
     @Column(name = "PASSWORD")
     private String password;
 
@@ -73,6 +74,11 @@ public class Person implements Serializable {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public String getCreationDay() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd");
+        return sdf.format(getCreationDate());
     }
 
     public String getPassword() {
