@@ -17,22 +17,22 @@ public class PersonService {
     @Inject
     private MessageSource messageSource;
 
-    public String checkPersonAuthentication(HttpServletRequest request){
+    public String checkPersonAuthentication(HttpServletRequest request) {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
-        if(person == null || !request.getParameter("password").equals(person.getPassword())){
+        if (person == null || !request.getParameter("password").equals(person.getPassword())) {
             authenticationError = messageSource.getMessage("authorizationerr", null, null, null);
-        }else{
+        } else {
             definePersonInSession(person, request.getSession());
         }
         return authenticationError;
     }
 
-    public void definePersonInSession(Person person, HttpSession httpSession){
+    public void definePersonInSession(Person person, HttpSession httpSession) {
         httpSession.setAttribute("person", person);
     }
 
-    public void registerPerson(Person person){
+    public void registerPerson(Person person) {
         personDAO.addPerson(person);
     }
 

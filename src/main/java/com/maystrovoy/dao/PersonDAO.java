@@ -16,31 +16,31 @@ public class PersonDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void addPerson(Person person){
+    public void addPerson(Person person) {
         entityManager.persist(person);
     }
 
-    public  void mergePerson(Person person){
+    public void mergePerson(Person person) {
         entityManager.merge(person);
     }
 
-    public Person getPersonByLogin(String loginName){
+    public Person getPersonByLogin(String loginName) {
         Person labor = null;
         Query getPersonQuery = entityManager.createQuery("select p from Person p where p.loginName = :loginParameter");
         getPersonQuery.setParameter("loginParameter", loginName);
         List<Person> laborList = getPersonQuery.getResultList();
-        if(laborList.size() > 0){
+        if (laborList.size() > 0) {
             labor = laborList.get(0);
         }
         return labor;
     }
 
-    public boolean isLoginExist(String loginName){
+    public boolean isLoginExist(String loginName) {
         boolean isLoginExist = false;
         Query getPersonQuery = entityManager.createQuery("select p from Person p where p.loginName = :loginParameter");
         getPersonQuery.setParameter("loginParameter", loginName);
         List<Person> laborList = getPersonQuery.getResultList();
-        if(laborList.size() > 0){
+        if (laborList.size() > 0) {
             isLoginExist = true;
         }
         return isLoginExist;
