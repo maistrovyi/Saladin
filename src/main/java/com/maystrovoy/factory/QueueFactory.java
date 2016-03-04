@@ -25,4 +25,5 @@ public class QueueFactory extends AbstractFactory {
         Queue queue = new Queue(targetObject, userName, objectType);
         return queue;
     }
+
 }
