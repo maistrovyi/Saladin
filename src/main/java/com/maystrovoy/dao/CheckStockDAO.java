@@ -15,7 +15,8 @@ public class CheckStockDAO {
     private EntityManager entityManager;
 
     public void addQueue(Queue queue) {
-        entityManager.persist(queue);
         System.out.println("add queue " + "objectType = " + queue.getObjectType());
+        System.out.println("entityManager " + entityManager);
+        entityManager.persist(queue);
     }
 }

@@ -20,7 +20,7 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(Exception.class)
     public ModelAndView handleException(Exception exception) {
-        System.out.println("In handleException" + exception.getMessage());
+        System.out.println("In handleException: " + exception.getMessage());
         ModelAndView mav = new ModelAndView("error_page");
         mav.addObject("header", "Unexpected exception");
         mav.addObject("message", "There error is: " + exception.getMessage());
