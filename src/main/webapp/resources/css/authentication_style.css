@@ -1,40 +1,104 @@
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
+.reg_block {
+    position: absolute;
+    width: 24%;
+    height: auto;
+    margin-left: 38%;
+    margin-top: 10%;
+    float: left;
+    text-align: left;
+    padding: 1%;
+    background: #865C4C;
+    box-shadow: 0 0 1px 2px rgba(20, 20, 20, 0.3);
+    -moz-box-shadow: 0 0 1px 2px rgba(20, 20, 20, 0.3);
+    -webkit-box-shadow: 0 0 1px 2px rgba(20, 20, 20, 0.3);
+    border-radius: 5px;
 }
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+.input {
+    position: relative;
+    display: block;
+    width: 90%;
+    float: left;
+    padding: 4%;
+    border: 1px solid wheat;
+    margin: 1%;
+    float: left;
+    font-family: "Quicksand";
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background: wheat;
+    box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
+    -moz-box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
+    -webkit-box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
 }
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+
+.input::-webkit-input-placeholder {
+    color: #c0392b;
+    font-size: 100%;
 }
-.form-signin .checkbox {
-  font-weight: normal;
+
+.input:hover {
+    background: #fff;
+    border: 1px solid #ccc;
 }
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+
+.input:focus {
+    background: #fff;
+    border: 1px solid #ccc;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+
+.input_button {
+    width: 98%;
+    padding: 15px 0;
+    border: 0px solid;
+    margin-left: 1%;
+    margin-top: 3%;
+    float: left;
+    font-family: "Quicksand";
+    -moz-font-family: Quicksand;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #e74c3c;
+    box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
+    -moz-box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
+    -webkit-box-shadow: 2px 2px 2px rgba(20, 20, 20, 0.7);
 }
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+
+.input_button:hover {
+    background: #EF6758;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+.error_label{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: wheat;
+    font-family: "Quicksand";
+    font-size: 130%;
+    margin-left: 2%;
+    margin-top: 1%;
 }
+
+.forgot_block {
+    color: wheat;
+    width: 100%;
+    float: left;
+    margin: 2% 2% 0 0;
+}
+
+.forgot_link {
+    color: wheat;
+    margin-left: 2%;
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: "Quicksand";
+    text-decoration: none;
+}
+
+.forgot_link:hover {
+    color: #c09d79;
+}
+
