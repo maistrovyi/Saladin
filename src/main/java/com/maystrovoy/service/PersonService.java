@@ -25,7 +25,7 @@ public class PersonService {
     public String checkPersonAuthentication(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
-        if (person == null || !request.getParameter("password").equals(getHashedPassword(person.getPassword(),person.getCreationDay()))) {
+        if (person == null || !request.getParameter("password").equals(getHashedPassword(person.getPassword(), person.getCreationDay()))) {
             authenticationError = messageSource.getMessage("authorizationerr", null, null, null);
         } else {
             definePersonInSession(person, request.getSession());
@@ -41,13 +41,15 @@ public class PersonService {
         personDAO.addPerson(person);
     }
 
-    public String getHashedPassword(String passwordToHash, String salt) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-
+    public static String getHashedPassword(String password, String salt) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         String generatedPassword = null;
+        String passwordToHash = password + salt;
 
         MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
-        messageDigest.update(salt.getBytes("UTF-8"));
-        byte[] bytes = messageDigest.digest(passwordToHash.getBytes("UTF-8"));
+        messageDigest.update(passwordToHash.getBytes("UTF-8"));
+
+        byte[] bytes = messageDigest.digest();
+
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < bytes.length; i++) {
             stringBuilder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
