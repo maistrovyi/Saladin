@@ -29,6 +29,7 @@ public class AuthenticationController {
         String authenticationError = personService.checkPersonAuthentication(request);
         if (authenticationError != null) {
             mav.addObject("authentication_error", authenticationError);
+            System.out.println("error person");
         } else {
             mav.setViewName("redirect:/home");
         }

@@ -25,7 +25,7 @@ public class PersonService {
     public String checkPersonAuthentication(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
-        if (person == null || !request.getParameter("password").equals(getHashedPassword(person.getPassword(), person.getCreationDay()))) {
+        if (person == null || !getHashedPassword(request.getParameter("password"), person.getCreationDay()).equals(person.getPassword())) {
             authenticationError = messageSource.getMessage("authorizationerr", null, null, null);
         } else {
             definePersonInSession(person, request.getSession());
