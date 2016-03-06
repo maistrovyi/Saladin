@@ -13,7 +13,7 @@
             <input type="text" placeholder="Login Name" class="input" name="loginName"/>
             <input type="password" placeholder="Password" class="input" name="password"/>
             <label class="error_label">${authentication_error}</label>
-            <input type="submit" value="Sign In" class="input_button"/>
+            <input type="submit" value="Log In" class="input_button"/>
             <a class="forgot_link" href="registration">Not signed up yet?</a>
         </form>
     </div>
