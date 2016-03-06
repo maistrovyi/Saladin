@@ -15,6 +15,7 @@
     <li><a href="/action_3">ACTION 3</a></li>
     <li><a href="/action_4">ACTION 4</a></li>
     <li><a href="/authentication">Login</a></li>
+    <li><a href="/signout">Sign out</a></li>
 </nav>
 <script type="text/javascript" src="/resources/js/active.js"></script>
 </body>

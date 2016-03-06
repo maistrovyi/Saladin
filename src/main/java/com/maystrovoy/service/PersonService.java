@@ -26,7 +26,7 @@ public class PersonService {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
         if (person == null || !getHashedPassword(request.getParameter("password"), person.getCreationDay()).equals(person.getPassword())) {
-            authenticationError = messageSource.getMessage("authorizationerr", null, null, null);
+            authenticationError = messageSource.getMessage("authenticationError", null, null, null);
         } else {
             definePersonInSession(person, request.getSession());
         }
