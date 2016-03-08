@@ -39,10 +39,9 @@ public class RegistrationController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData, BindingResult bindingResult) {
         final ModelAndView mav = new ModelAndView();
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             mav.setViewName("registration");
-        }
-        else{
+        } else {
             personService.registerPerson(registrationFormData.getPerson());
             mav.setViewName("redirect:/authentication");
         }

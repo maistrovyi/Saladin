@@ -25,6 +25,7 @@ public class Person implements Serializable {
     @Column(name = "PASSWORD")
     private String password;
 
+
     public Person() {
     }
 
@@ -88,4 +89,17 @@ public class Person implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", loginName='" + loginName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", creationDate=" + creationDate +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
 }
