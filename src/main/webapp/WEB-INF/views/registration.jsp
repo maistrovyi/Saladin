@@ -1,44 +1,40 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Spring MVC form submission</title>
+    <title>Registration | lifecell</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/general.css"/>
+    <link href="resources/css/registration_style.css" rel="stylesheet" type="text/css"/>
 </head>
-
 <body>
-<h2>Fill your form!</h2>
-
-<form:form method="POST" commandName="registrationFormData">
-    <table>
-        <tr>
-            <td>Enter your firstName:</td>
-            <td><form:input path="person.firstName" /></td>
-            <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
-        </tr>
-        <tr>
-            <td>Enter your secondName:</td>
-            <td><form:input path="person.secondName" /></td>
-                <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
-        </tr>
-        <tr>
-            <td>Enter your login:</td>
-            <td><form:input path="person.loginName" /></td>
-                <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
-        </tr>
-        <tr>
-            <td>Enter a password:</td>
-            <td><form:password path="person.password"  showPassword="true"/></td>
-            <%--<td><form:errors path="password" cssStyle="color: #ff0000;"/></td>--%>
-        <tr>
-            <td>Confirm your password:</td>
-            <td><form:password path="repeatPassword" showPassword="true"/></td>
-            <%--<td><form:errors path="passwordConf" cssStyle="color: #ff0000;"/></td>--%>
-        </tr>
-        <tr>
-            <td><input type="submit" name="submit" value="Submit"></td>
-        </tr>
-        <tr>
-    </table>
-</form:form>
-
+<form:form method="post" commandName="registrationFormData">
+<div class="reg_block">
+    <div class="box">
+        <div class="input_block">
+            <form:input type="text" placeholder="First Name" class="input" path="person.firstName"/>
+        </div>
+    </div>
+    <div class="box">
+        <div class="input_block">
+            <form:input type="text" placeholder="Second Name" class="input" path="person.secondName"/>
+        </div>
+    </div>
+    <div class="box">
+        <div class="input_block">
+            <form:input type="text" placeholder="Login Name" class="input" path="person.loginName"/>
+        </div>
+    </div>
+    <div class="box">
+        <div class="input_block">
+            <form:input type="password" placeholder="Password" class="input" path="person.password"/>
+        </div>
+    </div>
+    <div class="box">
+        <div class="input_block">
+            <form:input type="password" placeholder="Repeat Password" class="input" path="repeatPassword"/>
+        </div>
+    </div>
+    <input type="submit" value="Sign Up" class="input_button"/>
+    </form:form>
 </body>
 </html>

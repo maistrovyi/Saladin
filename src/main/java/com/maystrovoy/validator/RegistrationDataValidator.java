@@ -9,6 +9,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import javax.inject.Inject;
+import java.util.Date;
 
 @Component
 public class RegistrationDataValidator implements Validator {
@@ -25,6 +26,7 @@ public class RegistrationDataValidator implements Validator {
     public void validate(Object object, Errors error) {
         RegistrationFormData registrationData = (RegistrationFormData) object;
         Person person = registrationData.getPerson();
+        person.setCreationDate(new Date());
         String repeatPassword = registrationData.getRepeatPassword();
 
         error.pushNestedPath("person");
@@ -34,9 +36,11 @@ public class RegistrationDataValidator implements Validator {
         ValidationUtils.rejectIfEmpty(error, "password", "personerr.password", "Required field");
         if(!error.hasFieldErrors("password") && !repeatPassword.equals(person.getPassword())){
             error.rejectValue("password", "personerr.password.repeat", "Password error");
+            System.out.println("password :" + person.getPassword() + " is invalid");
         }
         if(!error.hasFieldErrors("loginName") && personDAO.isLoginExist(person.getLoginName())){
             error.rejectValue("loginName", "personerr.loginname.reserved", "Login error");
+            System.out.println("name :" + person.getLoginName() + " is already exist");
         }
         error.popNestedPath();
     }

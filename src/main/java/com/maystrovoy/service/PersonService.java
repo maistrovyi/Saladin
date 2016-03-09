@@ -37,7 +37,8 @@ public class PersonService {
         httpSession.setAttribute("person", person);
     }
 
-    public void registerPerson(Person person) {
+    public void registerPerson(Person person) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        person.setPassword(getHashedPassword(person.getPassword(), person.getCreationDay()));
         personDAO.addPerson(person);
     }
 

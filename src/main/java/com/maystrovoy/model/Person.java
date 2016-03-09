@@ -25,17 +25,7 @@ public class Person implements Serializable {
     @Column(name = "PASSWORD")
     private String password;
 
-
-    public Person() {
-    }
-
-    public Person(String loginName, String password, String secondName, Date creationDate, String password1) {
-        this.loginName = loginName;
-        this.password = password;
-        this.secondName = secondName;
-        this.creationDate = creationDate;
-        password = password1;
-    }
+    public Person() {}
 
     public long getId() {
         return id;

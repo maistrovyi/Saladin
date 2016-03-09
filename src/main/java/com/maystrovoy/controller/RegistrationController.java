@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.validation.Valid;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class RegistrationController {
@@ -21,6 +24,8 @@ public class RegistrationController {
     @Inject
     private PersonService personService;
 
+
+    @Named("registrationDataValidator")
     @Inject
     private RegistrationDataValidator registrationDataValidator;
 
@@ -37,12 +42,13 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData, BindingResult bindingResult) {
+    private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData, BindingResult bindingResult) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         final ModelAndView mav = new ModelAndView();
         if (bindingResult.hasErrors()) {
             mav.setViewName("registration");
         } else {
             personService.registerPerson(registrationFormData.getPerson());
+            System.out.println("register new person: " + registrationFormData.getPerson());
             mav.setViewName("redirect:/authentication");
         }
         return mav;
