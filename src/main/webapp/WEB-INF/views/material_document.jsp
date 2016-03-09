@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"/>
 <div id="content">
     <h3>Description:</h3>
-    <h5><p>Please, input Year and Document to insert into the SAP database</p></h5>
+    <h5><p>Please, input Year and Document to insert into the SAP database.</p></h5>
     <form method="post" action="material_document">
         <p><h4>Year:</h4></p>
         <p><input type="text" name="year"/></p>

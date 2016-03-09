@@ -13,7 +13,7 @@
     <li><a href="/home">HOME</a></li>
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/material_document">MATERIAL DOCUMENT</a></li>
-    <li><a href="/action_3">ACTION 3</a></li>
+    <li><a href="/material">MATERIAL</a></li>
     <li><a href="/action_4">ACTION 4</a></li>
     <li><a href="/signout">Log out</a></li>
 </nav>
