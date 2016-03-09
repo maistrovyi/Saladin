@@ -1,8 +1,13 @@
+body {
+    background: #666566;
+    font-family: Quicksand;
+    margin: 0% 0% 0% 1%;
+}
+
 .general_block {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: auto;
-    margin: 0% 0% 0% 0%;
     padding: 2%;
     border-radius: 1%;
     background: #865C4C;
