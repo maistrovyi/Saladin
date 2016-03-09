@@ -1,60 +1,44 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<html>
 <head>
-    <title>Registration | Recent news</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="resources/css/general.css"/>
-    <link href="resources/css/registration_style.css" rel="stylesheet" type="text/css"/>
+    <title>Spring MVC form submission</title>
 </head>
+
 <body>
-<div th:replace="header">&nbsp;</div>
+<h2>Fill your form!</h2>
 
-<form action="#" th:action="@{/registration}" method="post" th:object="${registrationFormData}">
-    <div class="reg_block" >
-        <div class="box">
-            <div class="input_block">
-                <input type="text" placeholder="First Name" class="input" th:field="*{person.firstName}"/>
-            </div>
-            <%--<div class="error_block">--%>
-                <%--<label th:if="${#fields.hasErrors('*{person.firstName}')}" class="error_label" th:errors="*{person.firstName}"></label>--%>
-            <%--</div>--%>
-        </div>
+<form:form method="POST" commandName="registrationFormData">
+    <table>
+        <tr>
+            <td>Enter your firstName:</td>
+            <td><form:input path="person.firstName" /></td>
+            <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
+        </tr>
+        <tr>
+            <td>Enter your secondName:</td>
+            <td><form:input path="person.secondName" /></td>
+                <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
+        </tr>
+        <tr>
+            <td>Enter your login:</td>
+            <td><form:input path="person.loginName" /></td>
+                <%--<td><form:errors path="name" cssStyle="color: #ff0000;"/></td>--%>
+        </tr>
+        <tr>
+            <td>Enter a password:</td>
+            <td><form:password path="person.password"  showPassword="true"/></td>
+            <%--<td><form:errors path="password" cssStyle="color: #ff0000;"/></td>--%>
+        <tr>
+            <td>Confirm your password:</td>
+            <td><form:password path="repeatPassword" showPassword="true"/></td>
+            <%--<td><form:errors path="passwordConf" cssStyle="color: #ff0000;"/></td>--%>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" value="Submit"></td>
+        </tr>
+        <tr>
+    </table>
+</form:form>
 
-        <div class="box">
-            <div class="input_block">
-                <input type="text" placeholder="Second Name" class="input" th:field="*{person.secondName}"/>
-            </div>
-            <%--<div class="error_block">--%>
-                <%--<label th:if="${#fields.hasErrors('*{person.secondName}')}"  class="error_label" th:errors="*{person.secondName}"></label>--%>
-            <%--</div>--%>
-        </div>
-
-        <div class="box">
-            <div class="input_block">
-                <input type="text" placeholder="Login Name" class="input" th:field="*{person.loginName}"/>
-            </div>
-            <%--<div class="error_block">--%>
-                <%--<label th:if="${#fields.hasErrors('*{person.loginName}')}" class="error_label" th:errors="*{person.loginName}"></label>--%>
-            <%--</div>--%>
-        </div>
-
-        <div class="box">
-            <div class="input_block">
-                <input type="password" placeholder="Password" class="input" th:field="*{person.password}"/>
-            </div>
-            <%--<div class="error_block">--%>
-                <%--<label th:if="${#fields.hasErrors('*{person.password}')}" class="error_label" th:errors="*{person.password}"></label>--%>
-            <%--</div>--%>
-        </div>
-
-        <div class="box">
-            <div class="input_block">
-                <input type="password" placeholder="Repeat Password" class="input" th:field="*{repeatPassword}"/>
-            </div>
-        </div>
-
-        <input type="submit" value="Sign Up" class="input_button"/>
-    </div>
-</form>
 </body>
 </html>
