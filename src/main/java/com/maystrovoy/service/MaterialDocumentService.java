@@ -4,6 +4,7 @@ import com.maystrovoy.dao.MaterialDocumentDAO;
 import com.maystrovoy.factory.QueueFactory;
 import com.maystrovoy.model.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,7 @@ public class MaterialDocumentService {
     @Autowired
     private MaterialDocumentDAO materialDocumentDAO;
 
+    @Qualifier("queueFactory")
     @Autowired
     private QueueFactory queueFactory;
 

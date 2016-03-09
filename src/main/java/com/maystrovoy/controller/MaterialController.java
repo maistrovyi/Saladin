@@ -22,7 +22,7 @@ public class MaterialController {
     @RequestMapping(value = "simple_material", method = RequestMethod.POST)
     public String processCheckStockForm(HttpServletRequest request) {
         String material = request.getParameter("material");
-        System.out.println(material);
+        System.out.println("material : " + material);
         materialService.processMaterial(material);
         return "redirect:/simple_material";
     }
