@@ -1,6 +1,6 @@
 body {
     background: #666566;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Quicksand;
     margin: 0;
 }
 
@@ -34,8 +34,21 @@ li a:hover {
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color: #58AF71;
     color: white;
+}
+
+#user_panel {
+    background-color: #58AF71;
+    display: block;
+    height: 90px;
+    width: 10%;
+    float: right;
+    border-bottom-left-radius: 65px;
+}
+
+#user_info {
+    text-align: center;
 }
 
 #content {
@@ -44,13 +57,17 @@ li a:hover {
 }
 
 input[type=text] {
-    background-color: #4CAF50;
+    background-color: #9E9E88;
     height: 25px;
     width: 45%;
     border: 5px;
     padding: 6px 10px;
     border-radius: 10px;
     font-size: larger;
+}
+
+input[type=text]:hover {
+    background-color: #BDC178;
 }
 
 input[type=text]:focus {

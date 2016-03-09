@@ -7,15 +7,19 @@
     <link rel="stylesheet" type="text/css" href="resources/css/general_style.css">
 </head>
 <body>
+<div id="user_panel">
+    <div id="user_info">
+        <h3>User: ${person.loginName}</h3>
+        <p><h3><a href="/signout">Log out</a></h3></p>
+    </div>
+</div>
 <nav id="nav">
     <li><img src="/resources/images/logo.gif"/></li>
-    <li>User: ${person.loginName}</li>
     <li><a href="/home">HOME</a></li>
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/material_document">MATERIAL DOCUMENT</a></li>
     <li><a href="/simple_material">MATERIAL</a></li>
     <li><a href="/action_4">ACTION 4</a></li>
-    <li><a href="/signout">Log out</a></li>
 </nav>
 <script type="text/javascript" src="/resources/js/active.js"></script>
 </body>

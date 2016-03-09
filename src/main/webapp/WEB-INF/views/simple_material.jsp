@@ -11,10 +11,10 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <h3>Description:</h3>
-    <h5><p>Please, input Material to insert into the SAP database.</p></h5>
+    <h2>Description:</h2>
+    <h3><p>Please, input "Material" to insert into the SAP database.</p></h3>
     <form method="post" action="simple_material">
-        <p><h4>Material:</h4></p>
+        <p><h3>Material:</h3></p>
         <P><input type="text" name="material"/></p>
         <p><input type="submit" value="Material" class="button"/></p>
     </form>

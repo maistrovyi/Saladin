@@ -11,12 +11,12 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <h3>Description:</h3>
-    <h5><p>Please, input Year and Document to insert into the SAP database.</p></h5>
+    <h2>Description:</h2>
+    <h3><p>Please, input "Year" and "Document" to insert into the SAP database.</p></h3>
     <form method="post" action="material_document">
-        <p><h4>Year:</h4></p>
+        <p><h3>Year:</h3></p>
         <p><input type="text" name="year"/></p>
-        <p><h4>Document:</h4></p>
+        <p><h3>Document:</h3></p>
         <P><input type="text" name="document"/></p>
         <p><input type="submit" value="Material Document" class="button"/></p>
     </form>
