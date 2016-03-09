@@ -9,14 +9,13 @@ import javax.persistence.PersistenceContext;
 
 @Repository
 @Transactional
-public class CheckStockDAO {
+public class MaterialDocumentDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     public void addQueue(Queue queue) {
-        System.out.println("add check_stock " + "objectType = " + queue.getObjectType());
+        System.out.println("add material_document " + "objectType = " + queue.getObjectType());
         entityManager.persist(queue);
     }
-
 }

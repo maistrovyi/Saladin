@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 public class QueueFactory extends AbstractFactory {
 
     public enum ObjectType {
-        CHECK_STOCK(10);
+        CHECK_STOCK(10),
+        MATERIAL_DOCUMENT(6);
 
         private int objectTypeValue;
 
