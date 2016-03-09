@@ -13,7 +13,7 @@
 <div id="content">
     <h3>Description:</h3>
     <h5><p>Please, input Material to insert into the SAP database.</p></h5>
-    <form method="post" action="material">
+    <form method="post" action="simple_material">
         <p><h4>Material:</h4></p>
         <P><input type="text" name="material"/></p>
         <p><input type="submit" value="Material" class="button"/></p>

@@ -14,16 +14,16 @@ public class MaterialController {
     @Autowired
     private MaterialService materialService;
 
-    @RequestMapping(value = "material", method = RequestMethod.GET)
+    @RequestMapping(value = "simple_material", method = RequestMethod.GET)
     public String showCheckStockForm() {
-        return "material";
+        return "simple_material";
     }
 
-    @RequestMapping(value = "material", method = RequestMethod.POST)
+    @RequestMapping(value = "simple_material", method = RequestMethod.POST)
     public String processCheckStockForm(HttpServletRequest request) {
         String material = request.getParameter("material");
         System.out.println(material);
         materialService.processMaterial(material);
-        return "redirect:/material";
+        return "redirect:/simple_material";
     }
 }
