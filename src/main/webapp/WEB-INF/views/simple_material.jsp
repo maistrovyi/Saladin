@@ -14,9 +14,8 @@
     <h2>Description:</h2>
     <h3><p>Please, input "Material" to insert into the SAP database.</p></h3>
     <form method="post" action="simple_material">
-        <p><h3>Material:</h3></p>
-        <P><input type="text" name="material"/></p>
-        <p><input type="submit" value="Material" class="button"/></p>
+        <h3>Material:<input type="text" name="material"/></h3>
+        <p><input type="submit" value="GET MATERIAL" class="button"/></p>
     </form>
 </div>
 </body>

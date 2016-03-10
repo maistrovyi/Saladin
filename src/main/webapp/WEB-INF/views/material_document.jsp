@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Material Document | lifecell</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu_material_document.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -14,11 +14,9 @@
     <h2>Description:</h2>
     <h3><p>Please, input "Year" and "Document" to insert into the SAP database.</p></h3>
     <form method="post" action="material_document">
-        <p><h3>Year:</h3></p>
-        <p><input type="text" name="year"/></p>
-        <p><h3>Document:</h3></p>
-        <P><input type="text" name="document"/></p>
-        <p><input type="submit" value="Material Document" class="button"/></p>
+        <h3>Year:<input type="text" name="year"/></h3>
+        <h3>Document:<input type="text" name="document"/></h3>
+        <p><input type="submit" value="GET MATERIAL DOCUMENT" class="button"/></p>
     </form>
 </div>
 </body>
