@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"/>
 <div id="content">
     <h2>Description:</h2>
-    <h3><p>Please, input "Location" and "Material" to CHECK STOCK from SAP.</p></h3>
+    <h3><p>Please, input "Location" and "Material" to CHECK STOCK from SAP database.</p></h3>
     <form method="post" action="check_stock">
         <h3>Location:<input type="text" name="location"/></h3>
         <h3>Material:<input type="text" name="material"/></h3>

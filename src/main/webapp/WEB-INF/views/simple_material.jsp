@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"/>
 <div id="content">
     <h2>Description:</h2>
-    <h3><p>Please, input "Material" to insert into the SAP database.</p></h3>
+    <h3><p>Please, input "Material" to MATERIAL from SAP database.</p></h3>
     <form method="post" action="simple_material">
         <h3>Material:<input type="text" name="material"/></h3>
         <p><input type="submit" value="GET MATERIAL" class="button"/></p>

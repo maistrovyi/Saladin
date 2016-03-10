@@ -7,6 +7,6 @@ table, th, td {
     border: 1px solid black;
     padding: 5px;
 }
-tr:hover {
+tr:hover td {
     background-color: #58AF71
 }

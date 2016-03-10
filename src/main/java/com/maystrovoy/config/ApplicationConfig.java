@@ -18,25 +18,25 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class ApplicationConfig {
 
+//    @Bean
+//    public DriverManagerDataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+//        dataSource.setUrl("jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T");
+//        dataSource.setUsername("MXSAP");
+//        dataSource.setPassword("INTEGRATION");
+//        return dataSource;
+//    }
+
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T");
-        dataSource.setUsername("MXSAP");
-        dataSource.setPassword("INTEGRATION");
+        dataSource.setUrl("jdbc:oracle:thin:@//localhost:1521/XE");
+        dataSource.setUsername("maystrovoy");
+        dataSource.setPassword("admin");
         return dataSource;
     }
-
-//    @Bean
-//    public DriverManagerDataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();Oracle -
-//        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-//        dataSource.setUrl("jdbc:oracle:thin:@//localhost:1521/XE");
-//        dataSource.setUsername("maystrovoy");
-//        dataSource.setPassword("admin");
-//        return dataSource;
-//    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
