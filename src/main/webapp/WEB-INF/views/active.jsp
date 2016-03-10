@@ -7,15 +7,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Active Queue | lifecell</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/active_style.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <form:form id="content">
     <h2>Description:</h2>
-    <h3><p>You can view all active queue.</p></h3>
-    <table>
+    <h3><p>All active queue:</p></h3>
+    <table id="th">
+            <tr>
+                <th>QUEUID</th>
+                <th>OBJECTID</th>
+                <th>OBJECTTYPE</th>
+                <th>STATUS</th>
+                <th>STARDATE</th>
+                <th>FINISHDATE</th>
+                <th>USERNAME</th>
+                <th>MESSAGE</th>
+            </tr>
         <c:forEach items="${activeQueueList}" var="queue">
             <tr>
                 <td>${queue.queueId}</td>
