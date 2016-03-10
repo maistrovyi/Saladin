@@ -13,8 +13,7 @@
             <form:input type="text" placeholder="First Name" class="input" path="person.firstName"/>
         </div>
         <div class="error_block">
-            <label if="${fields.hasErrors('*{person.firstName}')}" class="error_label"
-                   errors="*{person.firstName}"></label>
+            <form:errors path="person.firstName" cssClass="error_label" />
         </div>
     </div>
     <div class="box">
@@ -22,8 +21,7 @@
             <form:input type="text" placeholder="Second Name" class="input" path="person.secondName"/>
         </div>
         <div class="error_block">
-            <label if="${fields.hasErrors('*{person.secondName}')}" class="error_label"
-                   errors="*{person.secondName}"></label>
+            <form:errors path="person.secondName" cssClass="error_label" />
         </div>
     </div>
     <div class="box">
@@ -31,8 +29,7 @@
             <form:input type="text" placeholder="Login Name" class="input" path="person.loginName"/>
         </div>
         <div class="error_block">
-            <label if="${fields.hasErrors('*{person.loginName}')}" class="error_label"
-                   errors="*{person.loginName}"></label>
+            <form:errors path="person.loginName" cssClass="error_label" />
         </div>
     </div>
     <div class="box">
@@ -40,8 +37,7 @@
             <form:input type="password" placeholder="Password" class="input" path="person.password"/>
         </div>
         <div class="error_block">
-            <label if="${fields.hasErrors('*{person.password}')}" class="error_label"
-                   errors="*{person.password}"></label>
+            <form:errors path="person.password" cssClass="error_label"/>
         </div>
     </div>
     <div class="box">
