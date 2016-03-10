@@ -18,8 +18,7 @@ public class QueueController {
     @RequestMapping(value = "/active", method = RequestMethod.GET)
     private ModelAndView showActiveQueue(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView("active");
-        queueService.processActiveQueue(request);
-        mav.addObject("activeQueueList");
+        mav.addObject("activeQueueList", queueService.getActiveQueueData());
         return mav;
     }
 

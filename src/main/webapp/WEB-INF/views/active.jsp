@@ -18,7 +18,6 @@
     <table>
         <c:forEach items="${activeQueueList}" var="queue">
             <tr>
-                <td>123</td>
                 <td>${queue.queueId}</td>
                 <td>${queue.targetObject}</td>
                 <td>${queue.objectType}</td>
