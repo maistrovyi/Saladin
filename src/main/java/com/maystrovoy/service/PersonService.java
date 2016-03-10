@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
 public class PersonService {
 
     @Autowired
-    PersonDAO personDAO;
+    private PersonDAO personDAO;
 
     @Inject
     private MessageSource messageSource;

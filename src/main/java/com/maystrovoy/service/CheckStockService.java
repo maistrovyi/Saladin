@@ -1,6 +1,6 @@
 package com.maystrovoy.service;
 
-import com.maystrovoy.dao.CheckStockDAO;
+import com.maystrovoy.dao.QueueDAO;
 import com.maystrovoy.factory.QueueFactory;
 import com.maystrovoy.model.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import javax.inject.Inject;
 public class CheckStockService {
 
     @Autowired
-    private CheckStockDAO checkStockDAO;
+    private QueueDAO checkStockDAO;
 
     @Qualifier("queueFactory")
     @Autowired

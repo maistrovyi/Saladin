@@ -19,7 +19,7 @@
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/material_document">MATERIAL DOCUMENT</a></li>
     <li><a href="/simple_material">MATERIAL</a></li>
-    <li><a href="/action_4">ACTION 4</a></li>
+    <li><a href="/active">ACTIVE QUEUE</a></li>
 </nav>
 <script type="text/javascript" src="/resources/js/active.js"></script>
 </body>

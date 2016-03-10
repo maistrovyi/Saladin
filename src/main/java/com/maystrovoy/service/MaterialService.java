@@ -1,6 +1,6 @@
 package com.maystrovoy.service;
 
-import com.maystrovoy.dao.MaterialDAO;
+import com.maystrovoy.dao.QueueDAO;
 import com.maystrovoy.factory.QueueFactory;
 import com.maystrovoy.model.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class MaterialService {
     private final int numericItemLength = 18;
 
     @Autowired
-    private MaterialDAO materialDAO;
+    private QueueDAO materialDAO;
 
     @Qualifier("queueFactory")
     @Autowired
