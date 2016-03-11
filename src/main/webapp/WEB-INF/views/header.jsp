@@ -14,12 +14,16 @@
     </div>
 </div>
 <nav id="nav">
-    <li><img src="/resources/images/logo.gif"/></li>
+    <div id="logo">
+        <img src="/resources/images/logo.png" width="365|" height="200"/>
+    </div>
+    <div id="menu">
     <li><a href="/home">HOME</a></li>
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/material_document">MATERIAL DOCUMENT</a></li>
     <li><a href="/simple_material">MATERIAL</a></li>
     <li><a href="/active">ACTIVE QUEUE</a></li>
+    </div>
 </nav>
 <script type="text/javascript" src="/resources/js/active.js"></script>
 </body>

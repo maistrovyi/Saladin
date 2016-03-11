@@ -10,9 +10,9 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <h2>Description:</h2>
-    <h3><p>This is home page and content from any link will be displayed here.</p></h3>
-    <h3><p>So now click any link and see the result.</p></h3>
+    <p>Description:</p>
+    <p>This is home page and content from any link will be displayed here.</p>
+    <p>So now click any link and see the result.</p>
 </div>
 </body>
 </html>

@@ -22,10 +22,10 @@ public class CheckStockService {
     @Inject
     private MaterialService materialService;
 
-    public void processCheckStock(String location, String material) {
+    public void processCheckStock(String location, String material, String login) {
         String materialSap = materialService.optimizeMaterialValue(material);
         System.out.println("check_stockSap : " + location + "-" + materialSap);
-        Queue queue = queueFactory.createInstance(location + "-" + materialSap, "sapuser", QueueFactory.ObjectType.CHECK_STOCK.getObjectTypeValue());
+        Queue queue = queueFactory.createInstance(location + "-" + materialSap, login, QueueFactory.ObjectType.CHECK_STOCK.getObjectTypeValue());
         checkStockDAO.addQueue(queue);
     }
 

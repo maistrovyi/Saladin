@@ -1,10 +1,18 @@
 table {
     font-family: "Quicksand";
+    font-size: large;
     border-collapse: collapse;
     width: 80%;
 }
 
-table, th, td {
+th {
+    background-color: #6A684E;
+    font-family: "Quicksand";
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table, td {
     font-family: "Quicksand";
     border: 1px solid black;
     padding: 5px;
@@ -28,6 +36,5 @@ tr:hover td {
 .error_label {
     text-align: left;
     color: wheat;
-    font-family: "Comic Sans MS";
-    font-size: 130%;
+    font-family: "Quicksand";
 }

@@ -17,8 +17,8 @@ public class MaterialDocumentService {
     @Autowired
     private QueueFactory queueFactory;
 
-    public void processMaterialDocument(String year, String document) {
-        Queue queue = queueFactory.createInstance(year + "_" + document, "sapuser", QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
+    public void processMaterialDocument(String year, String document, String login) {
+        Queue queue = queueFactory.createInstance(year + "_" + document, login, QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
         materialDocumentDAO.addQueue(queue);
     }
 }

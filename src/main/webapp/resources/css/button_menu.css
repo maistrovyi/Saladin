@@ -6,9 +6,9 @@
     border-radius: 10px;
     font-size: 26px;
     color: #FFFFFF;
-    margin: 0 0 0 105px;
+    margin: 0 0 0 91px;
     padding: 5px 0 5px 0;
-    height: 45px;
+    height: 40px;
     width: 371px;
     text-align: center;
     -webkit-transition-duration: 0.4s;
@@ -38,8 +38,12 @@
     transition: 0s
 }
 
+#button_check_stock_m {
+    margin: 0 0 0 17px;
+}
+
 #button_mat_doc {
-    margin: 0 0 0 115px;
+    margin: 0 0 0 106px;
 }
 
 #first_input_mat_doc {

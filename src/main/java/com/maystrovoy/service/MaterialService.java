@@ -22,10 +22,10 @@ public class MaterialService {
     @Autowired
     private QueueFactory queueFactory;
 
-    public void processMaterial(String material) {
+    public void processMaterial(String material, String login) {
         String materialSap = optimizeMaterialValue(material);
         System.out.println("materialSap : " + materialSap);
-        Queue queue = queueFactory.createInstance(materialSap, "sapuser", QueueFactory.ObjectType.MATERIAL.getObjectTypeValue());
+        Queue queue = queueFactory.createInstance(materialSap, login, QueueFactory.ObjectType.MATERIAL.getObjectTypeValue());
         materialDAO.addQueue(queue);
     }
 

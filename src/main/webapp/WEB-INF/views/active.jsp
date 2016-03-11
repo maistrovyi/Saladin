@@ -15,8 +15,7 @@
 <body>
 <jsp:include page="header.jsp"/>
 <form:form id="content">
-    <h2>Description:</h2>
-    <h3><p>All active queue:</p></h3>
+    <p><p>All active queue:</p></p>
     <div class="error_message_block">
         <c:if test="${empty activeQueueList}">
             <div class="error_block">
