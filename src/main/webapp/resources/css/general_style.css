@@ -39,6 +39,7 @@ li a:hover {
 }
 
 #user_panel {
+    font-family: "Quicksand";
     background-color: #58AF71;
     display: block;
     height: 90px;
@@ -48,10 +49,12 @@ li a:hover {
 }
 
 #user_info {
+    font-family: "Comic Sans MS";
     text-align: center;
 }
 
 #content {
+    font-family: "Comic Sans MS";
     margin: 0 0 0 20%;
     padding: 40px;
 }

@@ -1,12 +1,33 @@
 table {
+    font-family: "Quicksand";
     border-collapse: collapse;
     width: 80%;
 }
 
 table, th, td {
+    font-family: "Quicksand";
     border: 1px solid black;
     padding: 5px;
 }
+
 tr:hover td {
     background-color: #58AF71
+}
+
+.error_message_block {
+    margin: -12px 0 10px -15px;
+}
+
+.error_block {
+    display: inline;
+    width: 50%;
+    height: 10%;
+    padding: 1%;
+}
+
+.error_label {
+    text-align: left;
+    color: wheat;
+    font-family: "Comic Sans MS";
+    font-size: 130%;
 }

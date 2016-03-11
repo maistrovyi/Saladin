@@ -16,9 +16,15 @@
 <form:form id="content">
     <h2>Description:</h2>
     <h3><p>All active queue:</p></h3>
+    <div class="error_message_block">
     <c:if test="${empty activeQueueList}">
-        <td>EMPTY</td>
+        <div class="error_block">
+            <label class="error_label">Queue is empty now.</label>
+        </div>
     </c:if>
+    </div>
+    <c:if test="${fn:length(activeQueueList) > 0}">
+
     <table id="th">
             <tr>
                 <th>QUEUID</th>
@@ -43,6 +49,7 @@
             </tr>
         </c:forEach>
     </table>
+    </c:if>
 </form:form>
 </body>
 </html>
