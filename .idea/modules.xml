@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring4WebMVC.iml" filepath="$PROJECT_DIR$/Spring4WebMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegrationControl.iml" filepath="$PROJECT_DIR$/IntegrationControl.iml" />
     </modules>
   </component>
 </project>
