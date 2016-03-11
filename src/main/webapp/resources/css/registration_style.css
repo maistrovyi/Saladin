@@ -66,12 +66,12 @@ body {
 }
 
 .input:hover {
-    background: #fff;
+    background: #BDC178;
     border: 1px solid #ccc;
 }
 
 .input:focus {
-    background: #fff;
+    background: #BDC178;
     border: 1px solid #ccc;
 }
 
@@ -84,7 +84,7 @@ body {
 
 .input_button {
     position: relative;
-    width: 44%;
+    width: 40%;
     height: 20%;
     margin-top: 1%;
     padding: 2%;

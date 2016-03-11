@@ -45,12 +45,12 @@ body {
 }
 
 .input:hover {
-    background: #fff;
+    background: #BDC178;
     border: 1px solid #ccc;
 }
 
 .input:focus {
-    background: #fff;
+    background: #BDC178;
     border: 1px solid #ccc;
 }
 
