@@ -7,7 +7,7 @@
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
       <jdbc-url>jdbc:oracle:thin:@MAXIMO2T</jdbc-url>
       <jdbc-additional-properties>
-        <property name="TNSADMIN_DIR" value="$USER_HOME$/Desktop" />
+        <property name="TNSADMIN_DIR" value="$USER_HOME$/Desktop/doc" />
       </jdbc-additional-properties>
       <default-dialect>Oracle</default-dialect>
     </data-source>
