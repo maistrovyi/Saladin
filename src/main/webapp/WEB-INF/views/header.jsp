@@ -15,7 +15,7 @@
 </div>
 <nav id="nav">
     <div id="logo">
-        <img src="/resources/images/logo.png" width="365|" height="200"/>
+        <img src="/resources/images/logo.png" width="365" height="200"/>
     </div>
     <div id="menu">
     <li><a href="/home">HOME</a></li>

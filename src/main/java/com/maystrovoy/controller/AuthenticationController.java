@@ -1,6 +1,9 @@
 package com.maystrovoy.controller;
 
+import com.maystrovoy.model.Person;
 import com.maystrovoy.service.PersonService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +17,8 @@ import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class AuthenticationController {
+
+    private static final Logger LOGGER = LogManager.getLogger(AuthenticationController.class);
 
     @Inject
     private PersonService personService;
@@ -37,6 +42,8 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/signout", method = RequestMethod.GET)
     private String signOut(HttpSession httpSession) {
+        Person person = (Person) httpSession.getAttribute("person");
+        LOGGER.info("Log out : " + person.getLoginName());
         httpSession.invalidate();
         return "redirect:/authentication";
     }
