@@ -31,9 +31,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         WebApplicationContext servletAppContext = createServletApplicationContext();
         Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application context for servlet [" + servletName + "]");
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
-        LOGGER.info("");
-        LOGGER.info("Loading Dispatcher Servlet of Integration Control" + new Date());
-        LOGGER.info("");
+        LOGGER.info("Loading Integration Control" + new Date());
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         System.out.println("Set dispatcher throw exception");
         ServletRegistration.Dynamic registration = servletContext.addServlet(servletName, dispatcherServlet);

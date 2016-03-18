@@ -49,7 +49,7 @@ public class RegistrationController {
     private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData, BindingResult bindingResult) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         final ModelAndView mav = new ModelAndView();
         if (bindingResult.hasErrors()) {
-            LOGGER.info("Error into register new person: " + registrationFormData.getPerson().getLoginName() + " " + bindingResult.getFieldError());
+            LOGGER.error("Error into register new person: " + registrationFormData.getPerson().getLoginName() + " " + bindingResult.getFieldError());
             mav.setViewName("registration");
         } else {
             personService.registerPerson(registrationFormData.getPerson());
