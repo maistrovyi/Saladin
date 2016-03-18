@@ -25,7 +25,6 @@ public class CheckStockController {
     public String processCheckStockForm(HttpServletRequest request) {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
-        System.out.println(location + "-" + material);
         HttpSession httpSession = request.getSession();
         Person person = (Person) httpSession.getAttribute("person");
         String login = person.getLoginName();

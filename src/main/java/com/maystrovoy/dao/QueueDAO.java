@@ -1,6 +1,8 @@
 package com.maystrovoy.dao;
 
 import com.maystrovoy.model.Queue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,11 +15,13 @@ import java.util.List;
 @Transactional
 public class QueueDAO {
 
+    private static final Logger LOGGER = LogManager.getLogger(QueueDAO.class);
+
     @PersistenceContext
     private EntityManager entityManager;
 
     public void addQueue(Queue queue) {
-        System.out.println("add into Queue objectid : " + queue.getTargetObject() + " objecttype : " + queue.getObjectType());
+        LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : " + queue.getObjectType());
         entityManager.persist(queue);
     }
 

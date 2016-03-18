@@ -25,7 +25,6 @@ public class MaterialDocumentController {
     public String processCheckStockForm(HttpServletRequest request) {
         String year = request.getParameter("year");
         String document = request.getParameter("document");
-        System.out.println(year + "_" + document);
         HttpSession httpSession = request.getSession();
         Person person = (Person) httpSession.getAttribute("person");
         String login = person.getLoginName();

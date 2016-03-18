@@ -1,5 +1,7 @@
 package com.maystrovoy.config;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.context.WebApplicationContext;
@@ -11,8 +13,11 @@ import javax.servlet.Filter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
+import java.util.Date;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    private static final Logger LOGGER = LogManager.getLogger(WebAppInitializer.class);
 
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.registerContextLoaderListener(servletContext);
@@ -26,6 +31,9 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         WebApplicationContext servletAppContext = createServletApplicationContext();
         Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application context for servlet [" + servletName + "]");
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
+        LOGGER.info("");
+        LOGGER.info("Loading Dispatcher Servlet of Integration Control" + new Date());
+        LOGGER.info("");
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         System.out.println("Set dispatcher throw exception");
         ServletRegistration.Dynamic registration = servletContext.addServlet(servletName, dispatcherServlet);

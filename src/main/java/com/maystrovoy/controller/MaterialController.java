@@ -24,7 +24,6 @@ public class MaterialController {
     @RequestMapping(value = "simple_material", method = RequestMethod.POST)
     public String processCheckStockForm(HttpServletRequest request) {
         String material = request.getParameter("material");
-        System.out.println("material : " + material);
         HttpSession httpSession = request.getSession();
         Person person = (Person) httpSession.getAttribute("person");
         String login = person.getLoginName();

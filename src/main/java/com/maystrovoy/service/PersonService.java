@@ -2,6 +2,8 @@ package com.maystrovoy.service;
 
 import com.maystrovoy.dao.PersonDAO;
 import com.maystrovoy.model.Person;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ import java.security.NoSuchAlgorithmException;
 @Service
 public class PersonService {
 
+    private static final Logger LOGGER = LogManager.getLogger(PersonService.class);
+
     @Autowired
     private PersonDAO personDAO;
 
@@ -27,6 +31,7 @@ public class PersonService {
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
         if (person == null || !getHashedPassword(request.getParameter("password"), person.getCreationDay()).equals(person.getPassword())) {
             authenticationError = messageSource.getMessage("authenticationError", null, null, null);
+            LOGGER.info("Authentication error by login :" + request.getParameter("loginName") + " " + authenticationError);
         } else {
             definePersonInSession(person, request.getSession());
         }
@@ -35,6 +40,7 @@ public class PersonService {
 
     public void definePersonInSession(Person person, HttpSession httpSession) {
         httpSession.setAttribute("person", person);
+        LOGGER.info("Log in : " + person.getLoginName());
     }
 
     public void registerPerson(Person person) throws UnsupportedEncodingException, NoSuchAlgorithmException {

@@ -3,6 +3,8 @@ package com.maystrovoy.service;
 import com.maystrovoy.dao.QueueDAO;
 import com.maystrovoy.factory.QueueFactory;
 import com.maystrovoy.model.Queue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import java.util.regex.Pattern;
 
 @Service
 public class MaterialService {
+
+    private static final Logger LOGGER = LogManager.getLogger(MaterialService.class);
 
     private final int numericItemLength = 18;
 
@@ -24,7 +28,7 @@ public class MaterialService {
 
     public void processMaterial(String material, String login) {
         String materialSap = optimizeMaterialValue(material);
-        System.out.println("materialSap : " + materialSap);
+        LOGGER.info("Material query : " + materialSap + " by user: "+ login);
         Queue queue = queueFactory.createInstance(materialSap, login, QueueFactory.ObjectType.MATERIAL.getObjectTypeValue());
         materialDAO.addQueue(queue);
     }

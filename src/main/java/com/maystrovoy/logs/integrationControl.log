@@ -1,63 +1,21 @@
-INFO  | 2016-03-17 22:07:40 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-INFO  | 2016-03-17 22:07:41 | [RMI TCP Connection(3)-127.0.0.1] hibernate.Version (Version.java:37) - HHH000412: Hibernate Core {5.1.0.Final}
-INFO  | 2016-03-17 22:07:41 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
-INFO  | 2016-03-17 22:07:41 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:317) - HHH000021: Bytecode provider name : javassist
-INFO  | 2016-03-17 22:07:41 | [RMI TCP Connection(3)-127.0.0.1] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-INFO  | 2016-03-17 22:07:42 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:07:42 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:07:42 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:07:42 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-INFO  | 2016-03-17 22:07:43 | [RMI TCP Connection(3)-127.0.0.1] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.3.Final
-INFO  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] hibernate.Version (Version.java:37) - HHH000412: Hibernate Core {5.1.0.Final}
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:317) - HHH000021: Bytecode provider name : javassist
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+WARN  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
+INFO  | 2016-03-18 13:11:22 | [RMI TCP Connection(3)-127.0.0.1] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.3.Final
+INFO  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-INFO  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-WARN  | 2016-03-17 22:07:45 | [RMI TCP Connection(3)-127.0.0.1] internal.EntityManagerFactoryRegistry (EntityManagerFactoryRegistry.java:63) - HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
-INFO  | 2016-03-17 22:19:04 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-INFO  | 2016-03-17 22:19:04 | [RMI TCP Connection(3)-127.0.0.1] hibernate.Version (Version.java:37) - HHH000412: Hibernate Core {5.1.0.Final}
-INFO  | 2016-03-17 22:19:04 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
-INFO  | 2016-03-17 22:19:04 | [RMI TCP Connection(3)-127.0.0.1] cfg.Environment (Environment.java:317) - HHH000021: Bytecode provider name : javassist
-INFO  | 2016-03-17 22:19:04 | [RMI TCP Connection(3)-127.0.0.1] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-INFO  | 2016-03-17 22:19:05 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:19:05 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:19:05 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:19:05 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-INFO  | 2016-03-17 22:19:06 | [RMI TCP Connection(3)-127.0.0.1] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.3.Final
-INFO  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-INFO  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-WARN  | 2016-03-17 22:19:08 | [RMI TCP Connection(3)-127.0.0.1] internal.EntityManagerFactoryRegistry (EntityManagerFactoryRegistry.java:63) - HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
-INFO  | 2016-03-17 22:19:19 | [http-apr-8080-exec-7] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
-INFO  | 2016-03-17 22:19:57 | [http-apr-8080-exec-9] service.CheckStockService (CheckStockService.java:32) - check_stockSap : ar-tur
-INFO  | 2016-03-17 22:19:59 | [http-apr-8080-exec-1] controller.AuthenticationController (AuthenticationController.java:46) - Log out : admin
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] hibernate.Version (Version.java:37) - HHH000412: Hibernate Core {5.1.0.Final}
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] cfg.Environment (Environment.java:317) - HHH000021: Bytecode provider name : javassist
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:20:55 | [RMI TCP Connection(6)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-INFO  | 2016-03-17 22:20:56 | [RMI TCP Connection(6)-127.0.0.1] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.3.Final
-INFO  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-INFO  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-WARN  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
-INFO  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-INFO  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
-WARN  | 2016-03-17 22:20:57 | [RMI TCP Connection(6)-127.0.0.1] internal.EntityManagerFactoryRegistry (EntityManagerFactoryRegistry.java:63) - HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+INFO  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+WARN  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:121) - HHH000341: Could not obtain connection metadata : Unsupported feature
+INFO  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] dialect.Dialect (Dialect.java:156) - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+INFO  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] internal.LobCreatorBuilderImpl (LobCreatorBuilderImpl.java:63) - HHH000422: Disabling contextual LOB creation as connection was null
+WARN  | 2016-03-18 13:11:24 | [RMI TCP Connection(3)-127.0.0.1] internal.EntityManagerFactoryRegistry (EntityManagerFactoryRegistry.java:63) - HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+INFO  | 2016-03-18 13:11:30 | [http-apr-8080-exec-3] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory

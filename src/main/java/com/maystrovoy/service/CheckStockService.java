@@ -28,8 +28,7 @@ public class CheckStockService {
 
     public void processCheckStock(String location, String material, String login) {
         String materialSap = materialService.optimizeMaterialValue(material);
-        System.out.println("check_stockSap : " + location + "-" + materialSap);
-        LOGGER.info("check_stockSap : " + location + "-" + materialSap);
+        LOGGER.info("Check Stock query : " + location + "-" + materialSap + " by user: "+ login);
         Queue queue = queueFactory.createInstance(location + "-" + materialSap, login, QueueFactory.ObjectType.CHECK_STOCK.getObjectTypeValue());
         checkStockDAO.addQueue(queue);
     }
