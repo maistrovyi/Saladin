@@ -31,7 +31,7 @@ public class PersonService {
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
         if (person == null || !getHashedPassword(request.getParameter("password"), person.getCreationDay()).equals(person.getPassword())) {
             authenticationError = messageSource.getMessage("authenticationError", null, null, null);
-            LOGGER.info("Authentication error by login :" + request.getParameter("loginName") + " " + authenticationError);
+            LOGGER.info("Authentication error by login :" + request.getParameter("loginName") + ", Error: " + authenticationError);
         } else {
             definePersonInSession(person, request.getSession());
         }
