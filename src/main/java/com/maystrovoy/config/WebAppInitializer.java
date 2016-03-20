@@ -31,7 +31,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         WebApplicationContext servletAppContext = createServletApplicationContext();
         Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application context for servlet [" + servletName + "]");
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
-        LOGGER.info("Loading Integration Control" + new Date());
+        LOGGER.info("Loading Integration Control " + new Date());
         String path = System.getProperty("catalina.home");
         LOGGER.info("logging files path : " + path + "\\logs");
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
