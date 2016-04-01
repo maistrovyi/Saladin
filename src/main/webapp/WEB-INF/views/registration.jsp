@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Registration | lifecell</title>
+    <title>Registration | Saladin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="resources/css/registration_style.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">

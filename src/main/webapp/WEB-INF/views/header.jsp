@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>lifecell</title>
+    <title>Saladin</title>
     <link rel="stylesheet" type="text/css" href="resources/css/general_style.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
     <li><a href="/home">HOME</a></li>
     <li><a href="/check_stock">CHECK STOCK</a></li>
     <li><a href="/material_document">MATERIAL DOCUMENT</a></li>
+    <li><a href="/update_material_document">MD UPDATE</a></li>
     <li><a href="/simple_material">MATERIAL</a></li>
     <li><a href="/active">ACTIVE QUEUE</a></li>
     </div>

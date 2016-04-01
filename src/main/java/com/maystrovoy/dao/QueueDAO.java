@@ -1,6 +1,7 @@
 package com.maystrovoy.dao;
 
 import com.maystrovoy.model.Queue;
+import com.maystrovoy.model.Sap_Log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
@@ -19,6 +20,11 @@ public class QueueDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    public void removeQueueFromSapLog(Sap_Log sapLog) {
+        LOGGER.info("remove from Sap_Log objectid : " + sapLog.getTargetObject());
+        entityManager.remove(sapLog);
+    }
 
     public void addQueue(Queue queue) {
         LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : " + queue.getObjectType());

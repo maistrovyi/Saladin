@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Material Document | Saladin</title>
+    <title>MD Update | Saladin</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
@@ -12,10 +12,10 @@
 <jsp:include page="header.jsp"/>
 <div id="content">
     <p>Description:</p>
-    <p>Please, input "Document" field to get material document from SAP.</p>
-    <form method="post" action="material_document">
+    <p>Please, input "Document" field to update material document from SAP.</p>
+    <form method="post" action="update_material_document">
         <p>Document:<input type="text" name="document"/></p>
-        <p><input type="submit" id="button_mat_doc" value="GET MATERIAL DOCUMENT" class="button"/></p>
+        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button"/></p>
     </form>
 </div>
 </body>

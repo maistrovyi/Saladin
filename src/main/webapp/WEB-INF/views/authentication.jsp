@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Sign in | lifecell</title>
+    <title>Sign in | Saladin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="resources/css/authentication_style.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
