@@ -1,12 +1,15 @@
 package com.maystrovoy.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "SAP_LOG")
-public class Sap_Log implements Serializable {
+public class SapLog implements Serializable {
 
     @Id
     @Column(name = "QUEUEID")
@@ -26,10 +29,10 @@ public class Sap_Log implements Serializable {
     @Column(name = "MESSAGE")
     private String message;
 
-    public Sap_Log() {
+    public SapLog() {
     }
 
-    public Sap_Log(String targetObject) {
+    public SapLog(String targetObject) {
         this.targetObject = targetObject;
     }
 

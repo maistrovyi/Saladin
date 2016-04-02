@@ -1,7 +1,7 @@
 package com.maystrovoy.factory;
 
 import com.maystrovoy.model.Queue;
-import com.maystrovoy.model.Sap_Log;
+import com.maystrovoy.model.SapLog;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,9 +29,9 @@ public class QueueFactory extends AbstractFactory {
         return queue;
     }
 
-    public Sap_Log createInstance(String targetObject) {
-        Sap_Log sapLog = new Sap_Log(targetObject);
-        return sapLog;
+    @Override
+    public SapLog createInstance(String targetObject) {
+        return null;
     }
 
 }

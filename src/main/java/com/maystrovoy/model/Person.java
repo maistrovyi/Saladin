@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-@Table(name ="PERSON")
+@Table(name = "PERSON")
 public class Person implements Serializable {
 
     @Id
