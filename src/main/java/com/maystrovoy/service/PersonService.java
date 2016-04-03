@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class PersonService {
@@ -43,9 +44,17 @@ public class PersonService {
         LOGGER.info("Log in : " + person.getLoginName());
     }
 
+    public void updatePersonsRights(Person editedPerson) {
+        personDAO.updatePersons(editedPerson);
+    }
+
     public void registerPerson(Person person) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         person.setPassword(getHashedPassword(person.getPassword(), person.getCreationDay()));
         personDAO.addPerson(person);
+    }
+
+    public List<Person> getAllPersonsData() {
+        return personDAO.getAllPersons();
     }
 
     public static String getHashedPassword(String password, String salt) throws NoSuchAlgorithmException, UnsupportedEncodingException {

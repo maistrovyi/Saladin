@@ -15,18 +15,27 @@ public class Person implements Serializable {
     @Column(name = "ID_PERSON", updatable=false)
     private long id;
     @Column(name = "LOGIN_NAME")
-    private String  loginName;
+    private String loginName;
     @Column(name = "FIRST_NAME")
-    private String  firstName;
+    private String firstName;
     @Column(name = "SECOND_NAME")
-    private String  secondName;
+    private String secondName;
     @Column(name = "CREATION_DATE")
     private Date creationDate;
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "RIGHTS")
+    private int rights;
 
     public Person() {}
 
+    public int getRights() {
+        return rights;
+    }
+
+    public void setRights(int rights) {
+        this.rights = rights;
+    }
     public long getId() {
         return id;
     }
@@ -78,18 +87,6 @@ public class Person implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", loginName='" + loginName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", creationDate=" + creationDate +
-                ", password='" + password + '\'' +
-                '}';
     }
 
 }

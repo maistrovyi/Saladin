@@ -24,6 +24,16 @@ public class PersonDAO {
         entityManager.merge(person);
     }
 
+    public void updatePersons(Person editedPerson) {
+        entityManager.refresh(editedPerson);
+    }
+
+    public List<Person> getAllPersons() {
+        Query getAllPersonsQuery = entityManager.createQuery("select q from Person q");
+        List<Person> allPersonsList = getAllPersonsQuery.getResultList();
+        return allPersonsList;
+    }
+
     public Person getPersonByLogin(String loginName) {
         Person labor = null;
         Query getPersonQuery = entityManager.createQuery("select p from Person p where p.loginName = :loginParameter");
