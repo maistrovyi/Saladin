@@ -17,6 +17,13 @@
 <jsp:include page="header.jsp"/>
 <form:form id="content">
     <p>All persons:</p>
+    <p>To change user privileges, you must select an item from the list and click the save button.</p>
+    <p>Types of priviliges:</p>
+    <ul>
+        <li>"read" - (default user) - Only read Queue;</li>
+        <li>"write" - (confirmed user) - Read and edit Queue;</li>
+        <li>"admin" - (administrator) - Manage Saladin;</li>
+    </ul>
     <c:if test="${fn:length(allPersonsList) > 0}">
         <table id="th">
             <tr>
@@ -34,7 +41,15 @@
                         <td>${person.firstName}</td>
                         <td>${person.secondName}</td>
                         <td>${person.creationDate}</td>
-                        <td><input id="button_check_stock_m" type="text" name="editedPersonRightValue" value="${person.rights}"/>
+                        <td>
+                            <select>
+                                <option value="${person.role}">${person.role}</option>
+                                <option value="READ">read</option>
+                                <option value="WRITE">write</option>
+                            </select>
+                        </td>
+                        <td><input id="button_check_stock_m" type="text" name="editedPersonRightValue"
+                                   value="${person.role}"/>
                             <input type="hidden" name="editedPersonLoginName" value="${person.loginName}"/>
                         </td>
                         <td>

@@ -28,10 +28,10 @@ public class PersonDAO {
         entityManager.merge(person);
     }
 
-    public void updatePersons(String login, String editedPersonLoginName, int editedPersonRight) {
+    public void updatePersons(String login, String editedPersonLoginName, String editedPersonRole) {
         Person editedPerson = getPersonByLogin(editedPersonLoginName);
-        editedPerson.setRights(editedPersonRight);
-        LOGGER.info("Admin: " + login + " changed user " + editedPersonLoginName + " priviliges to " + editedPersonRight);
+        editedPerson.setRole(editedPersonRole);
+        LOGGER.info("Admin: " + login + " changed user " + editedPersonLoginName + " priviliges to " + editedPersonRole);
         entityManager.persist(editedPerson);
     }
 

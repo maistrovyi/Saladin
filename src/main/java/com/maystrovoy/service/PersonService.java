@@ -44,8 +44,8 @@ public class PersonService {
         LOGGER.info("Log in : " + person.getLoginName());
     }
 
-    public void updatePersonsRights(String login, String editedPersonLoginName, int editedPersonRight) {
-        personDAO.updatePersons(login, editedPersonLoginName, editedPersonRight);
+    public void updatePersonsRights(String login, String editedPersonLoginName, String editedPersonRole) {
+        personDAO.updatePersons(login, editedPersonLoginName, editedPersonRole);
     }
 
     public void registerPerson(Person person) throws UnsupportedEncodingException, NoSuchAlgorithmException {

@@ -24,18 +24,12 @@ public class Person implements Serializable {
     private Date creationDate;
     @Column(name = "PASSWORD")
     private String password;
-    @Column(name = "RIGHTS")
-    private int rights;
+    @Column(name = "ROLE")
+    private String role;
 
     public Person() {}
 
-    public int getRights() {
-        return rights;
-    }
 
-    public void setRights(int rights) {
-        this.rights = rights;
-    }
     public long getId() {
         return id;
     }
@@ -87,6 +81,14 @@ public class Person implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
 }
