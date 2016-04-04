@@ -3,6 +3,7 @@ package com.maystrovoy.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -10,9 +11,9 @@ import java.util.Date;
 public class Person implements Serializable {
 
     @Id
-    @SequenceGenerator(name="person_seq", sequenceName="person_seq", allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="person_seq")
-    @Column(name = "ID_PERSON", updatable=false)
+    @SequenceGenerator(name = "person_seq", sequenceName = "person_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_seq")
+    @Column(name = "ID_PERSON", updatable = false)
     private long id;
     @Column(name = "LOGIN_NAME")
     private String loginName;
@@ -27,8 +28,12 @@ public class Person implements Serializable {
     @Column(name = "ROLE")
     private String role;
 
-    public Person() {}
+    public ArrayList<String> getTypes() {
 
+        return PersonRoleType.filterTypes(role);
+    }
+
+    public Person() {}
 
     public long getId() {
         return id;
