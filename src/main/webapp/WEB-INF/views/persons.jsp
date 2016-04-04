@@ -10,35 +10,35 @@
     <title>All persons | Saladin</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/active_style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <form:form id="content">
-    <p>
-    <p>All persons:</p></p>
-
+    <p>All persons:</p>
     <c:if test="${fn:length(allPersonsList) > 0}">
         <table id="th">
             <tr>
                 <th>Login name</th>
                 <th>First name</th>
                 <th>Second name</th>
-                <th>Creation Date</th>
+                <th>Creation date</th>
                 <th>Privileges</th>
-                <th>ASD</th>
+                <th>Save</th>
             </tr>
             <c:forEach items="${allPersonsList}" var="person" varStatus="loop">
                 <tr>
                     <form method="post" action="persons">
-                        <c:out value="${person}"/>
                         <td>${person.loginName}</td>
                         <td>${person.firstName}</td>
                         <td>${person.secondName}</td>
                         <td>${person.creationDate}</td>
-                        <td><input id="button_check_stock_m" type="text" name="person" value="${person.rights}"/></td>
+                        <td><input id="button_check_stock_m" type="text" name="editedPersonRightValue" value="${person.rights}"/>
+                            <input type="hidden" name="editedPersonLoginName" value="${person.loginName}"/>
+                        </td>
                         <td>
-                            <p><input type="submit" value="SAVE" class="button"/></p>
+                            <p><input id="button_persons" type="submit" value="SAVE" class="button"/></p>
                     </form>
                     </td>
                 </tr>

@@ -28,7 +28,6 @@ public class RegistrationController {
     @Inject
     private PersonService personService;
 
-
     @Named("registrationDataValidator")
     @Inject
     private RegistrationDataValidator registrationDataValidator;
@@ -46,10 +45,13 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData, BindingResult bindingResult) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    private ModelAndView checkRegistrationForm(@ModelAttribute() @Valid final RegistrationFormData registrationFormData,
+                                               BindingResult bindingResult) throws UnsupportedEncodingException,
+            NoSuchAlgorithmException {
         final ModelAndView mav = new ModelAndView();
         if (bindingResult.hasErrors()) {
-            LOGGER.error("Error into register new person: " + registrationFormData.getPerson().getLoginName() + " " + bindingResult.getFieldError());
+            LOGGER.error("Error into register new person: " + registrationFormData.getPerson().getLoginName() + " "
+                    + bindingResult.getFieldError());
             mav.setViewName("registration");
         } else {
             personService.registerPerson(registrationFormData.getPerson());

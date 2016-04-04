@@ -1,6 +1,8 @@
 package com.maystrovoy.dao;
 
 import com.maystrovoy.model.Person;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,8 @@ import java.util.List;
 @Transactional
 public class PersonDAO {
 
+    private static final Logger LOGGER = LogManager.getLogger(PersonDAO.class);
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -24,8 +28,11 @@ public class PersonDAO {
         entityManager.merge(person);
     }
 
-    public void updatePersons(Person editedPerson) {
-        entityManager.refresh(editedPerson);
+    public void updatePersons(String login, String editedPersonLoginName, int editedPersonRight) {
+        Person editedPerson = getPersonByLogin(editedPersonLoginName);
+        editedPerson.setRights(editedPersonRight);
+        LOGGER.info("Admin: " + login + " changed user " + editedPersonLoginName + " priviliges to " + editedPersonRight);
+        entityManager.persist(editedPerson);
     }
 
     public List<Person> getAllPersons() {

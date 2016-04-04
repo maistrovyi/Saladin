@@ -25,14 +25,14 @@ public class PersonsController {
     }
 
     @RequestMapping(value = "persons", method = RequestMethod.POST)
-    public String updatePersonsRightForm(HttpServletRequest request, Person editedPerson) {
-//        String edited = request.getParameter("asd");
-//        int editedRight = (Integer.parseInt(edited));
-//        editedPerson.setRights(editedRight);
+    public String updatePersonsRightForm(HttpServletRequest request) {
+        String edited = request.getParameter("editedPersonRightValue");
+        int editedPersonRight = (Integer.parseInt(edited));
+        String editedPersonLoginName = request.getParameter("editedPersonLoginName");
         HttpSession httpSession = request.getSession();
         Person person = (Person) httpSession.getAttribute("person");
         String login = person.getLoginName();
-        personService.updatePersonsRights(editedPerson);
+        personService.updatePersonsRights(login, editedPersonLoginName, editedPersonRight);
         return "redirect:/persons";
     }
 }
