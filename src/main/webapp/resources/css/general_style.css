@@ -89,3 +89,7 @@ input[type=text]:focus {
     background-color: #BDC178;
     outline: none;
 }
+
+#select {
+    font-family: Cursive;
+}

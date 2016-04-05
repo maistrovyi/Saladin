@@ -26,7 +26,7 @@
 
     <c:if test="${fn:length(activeQueueList) > 0}">
         <table id="th">
-            <tr>
+            <tr align="center">
                 <th>QUEUID</th>
                 <th>OBJECTID</th>
                 <th>OBJECTTYPE</th>
@@ -37,7 +37,7 @@
                 <th>MESSAGE</th>
             </tr>
             <c:forEach items="${activeQueueList}" var="queue">
-                <tr>
+                <tr align="center">
                     <td>${queue.queueId}</td>
                     <td>${queue.targetObject}</td>
                     <td>${queue.objectType}</td>

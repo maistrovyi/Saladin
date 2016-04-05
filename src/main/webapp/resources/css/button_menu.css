@@ -54,3 +54,12 @@
     padding: 0;
     margin: 0;
 }
+
+#button_remove_persons {
+    background-color: #91221e;
+    font-family: Quicksand;
+    height: 40px;
+    width: 110px;
+    padding: 0;
+    margin: 0;
+}

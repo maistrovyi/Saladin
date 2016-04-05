@@ -17,25 +17,27 @@
 <jsp:include page="header.jsp"/>
 <form:form id="content">
     <p>All persons:</p>
-    <p>To change user role, you must select an item from the list and click the save button.</p>
+    <p>To change user role, you must select an item from the list and click on the "SAVE" button.</p>
     <p>Types of roles:</p>
     <ul>
         <li>"read" - (default user) - Only read Queue;</li>
         <li>"write" - (confirmed user) - Read and edit Queue;</li>
         <li>"admin" - (administrator) - Manage Saladin;</li>
     </ul>
+    <p>If you want to remove person - click on the "DELETE" button</p>
     <c:if test="${fn:length(allPersonsList) > 0}">
         <table id="th">
-            <tr>
+            <tr align="center">
                 <th>Login name</th>
                 <th>First name</th>
                 <th>Second name</th>
                 <th>Creation date</th>
                 <th>Roles</th>
-                <th>Save</th>
+                <th>Save changes</th>
+                <th>Delete person</th>
             </tr>
             <c:forEach items="${allPersonsList}" var="person" varStatus="loop">
-                <tr>
+                <tr align="center">
                     <form method="post" action="persons">
                         <td>${person.loginName}</td>
                         <td>${person.firstName}</td>
@@ -43,7 +45,7 @@
                         <td>${person.creationDate}</td>
                         <td>
                             <input type="hidden" name="editedPersonLoginName" value="${person.loginName}"/>
-                            <select name="editedPersonRightValue">
+                            <select id="select" name="editedPersonRightValue">
                                 <option value="${person.role}">${person.role}</option>
                                 <c:forEach items="${person.getTypes()}" var="role" varStatus="loop">
                                     <option value="${role}">${role}</option>
@@ -53,6 +55,9 @@
                         <td>
                             <p><input id="button_persons" type="submit" value="SAVE" class="button"/></p>
                     </form>
+                    </td>
+                    <td>
+                        <p><input id="button_remove_persons" type="submit" value="DELETE" class="button"/></p>
                     </td>
                 </tr>
             </c:forEach>
