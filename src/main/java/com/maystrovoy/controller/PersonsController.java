@@ -36,6 +36,7 @@ public class PersonsController extends AbstractLoginController {
         String removedPersonLoginName = request.getParameter("removedPersonLoginName");
         String login = getPersonLoginName(request);
         personService.removePersonByLogin(login, removedPersonLoginName);
+        request.getSession().invalidate();
         return "redirect:/persons";
     }
 }
