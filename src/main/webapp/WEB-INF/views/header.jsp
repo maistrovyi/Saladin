@@ -25,6 +25,7 @@
     <li><a href="/simple_material">MATERIAL</a></li>
     <li><a href="/active">ACTIVE QUEUE</a></li>
     <li><a href="/persons">PERSONS</a></li>
+    <li><a href="/settings">SETTINGS</a></li>
     </div>
 </nav>
 <script type="text/javascript" src="/resources/js/active.js"></script>
