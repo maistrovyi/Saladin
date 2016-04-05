@@ -1,6 +1,5 @@
 package com.maystrovoy.controller;
 
-import com.maystrovoy.model.Person;
 import com.maystrovoy.service.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,10 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Controller
-public class PersonsController {
+public class PersonsController extends AbstractLoginController {
 
     @Inject
     private PersonService personService;
@@ -28,9 +26,7 @@ public class PersonsController {
     public String updatePersonsRightForm(HttpServletRequest request) {
         String editedPersonRole = request.getParameter("editedPersonRightValue");
         String editedPersonLoginName = request.getParameter("editedPersonLoginName");
-        HttpSession httpSession = request.getSession();
-        Person person = (Person) httpSession.getAttribute("person");
-        String login = person.getLoginName();
+        String login = getPersonLoginName(request);
         personService.updatePersonsRights(login, editedPersonLoginName, editedPersonRole);
         return "redirect:/persons";
     }
@@ -38,9 +34,7 @@ public class PersonsController {
     @RequestMapping(value = "remove", method = RequestMethod.POST)
     public String removePerson(HttpServletRequest request) {
         String removedPersonLoginName = request.getParameter("removedPersonLoginName");
-        HttpSession httpSession = request.getSession();
-        Person person = (Person) httpSession.getAttribute("person");
-        String login = person.getLoginName();
+        String login = getPersonLoginName(request);
         personService.removePersonByLogin(login, removedPersonLoginName);
         return "redirect:/persons";
     }

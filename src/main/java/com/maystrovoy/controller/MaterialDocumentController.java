@@ -1,6 +1,5 @@
 package com.maystrovoy.controller;
 
-import com.maystrovoy.model.Person;
 import com.maystrovoy.service.MaterialDocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 
 @Controller
-public class MaterialDocumentController {
+public class MaterialDocumentController extends AbstractLoginController {
 
     @Autowired
     private MaterialDocumentService materialDocumentService;
@@ -27,9 +25,7 @@ public class MaterialDocumentController {
         Integer currentYear = Calendar.getInstance().get(Calendar.YEAR);
         String year = currentYear.toString();
         String document = request.getParameter("document");
-        HttpSession httpSession = request.getSession();
-        Person person = (Person) httpSession.getAttribute("person");
-        String login = person.getLoginName();
+        String login = getPersonLoginName(request);
         materialDocumentService.processMaterialDocument(year, document, login);
         return "redirect:/material_document";
     }

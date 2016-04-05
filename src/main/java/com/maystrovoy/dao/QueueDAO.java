@@ -26,6 +26,8 @@ public class QueueDAO {
         sapLog = getSapLog(sapLog);
         if (sapLog != null) {
             entityManager.remove(sapLog);
+        } else {
+            LOGGER.error("Removing failed, SAP_LOG is empty");
         }
     }
 
@@ -37,8 +39,12 @@ public class QueueDAO {
     }
 
     public void addQueue(Queue queue) {
-        LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : " + queue.getObjectType());
-        entityManager.persist(queue);
+        if (queue != null) {
+            entityManager.persist(queue);
+            LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : " + queue.getObjectType());
+        } else {
+            LOGGER.error("Adding failed, QUEUE is empty");
+        }
     }
 
     public List<Queue> getActiveQueue() {

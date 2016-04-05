@@ -21,8 +21,10 @@ public class PersonDAO {
     private EntityManager entityManager;
 
     public void addPerson(Person person) {
-        person.setRole("read");
-        entityManager.persist(person);
+        if (person != null) {
+            person.setRole("read");
+            entityManager.persist(person);
+        }
     }
 
     public void mergePerson(Person person) {
