@@ -63,3 +63,12 @@
     padding: 0;
     margin: 0;
 }
+
+#button_reset_persons {
+    background-color: #1C2C91;
+    font-family: Quicksand;
+    height: 40px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+}

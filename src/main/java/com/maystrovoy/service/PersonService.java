@@ -48,6 +48,10 @@ public class PersonService {
         LOGGER.info("Log in : " + person.getLoginName());
     }
 
+    public void resetPersonPassword(String login, String resetPersonLoginName) {
+        personDAO.resetPersonPassword(login, resetPersonLoginName);
+    }
+
     public void updatePersonsRights(String login, String editedPersonLoginName, String editedPersonRole) {
         personDAO.updatePersons(login, editedPersonLoginName, editedPersonRole);
     }

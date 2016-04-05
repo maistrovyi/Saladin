@@ -1,6 +1,7 @@
 package com.maystrovoy.dao;
 
 import com.maystrovoy.model.Person;
+import com.maystrovoy.service.PersonService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
@@ -9,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @Repository
@@ -35,8 +38,30 @@ public class PersonDAO {
         Person person = getPersonByLogin(personLoginName);
         if (person != null) {
             entityManager.remove(person);
-            LOGGER.info("admin :" + adminLogin + " removed person :" + personLoginName);
+            LOGGER.info("admin : " + adminLogin + " removed person : " + personLoginName);
+        } else {
+            LOGGER.error("failed to remove person, person is null");
         }
+    }
+
+    public void resetPersonPassword(String login, String resetPersonLoginName) {
+        Person person = getPersonByLogin(resetPersonLoginName);
+        if (person != null) {
+            String password = null;
+            try {
+                password = PersonService.getHashedPassword(person.getLoginName(), person.getCreationDay());
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            person.setPassword(password);
+            entityManager.persist(person);
+            LOGGER.info("admin : " + login + " reset password for person : " + resetPersonLoginName);
+        } else {
+            LOGGER.info("failed to reset person password, person is null");
+        }
+
     }
 
     public void updatePersons(String login, String editedPersonLoginName, String editedPersonRole) {

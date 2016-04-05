@@ -39,4 +39,12 @@ public class PersonsController extends AbstractLoginController {
         request.getSession().invalidate();
         return "redirect:/persons";
     }
+
+    @RequestMapping(value = "reset", method = RequestMethod.POST)
+    public String resetPersonPassword(HttpServletRequest request) {
+        String resetPersonLoginName = request.getParameter("resetPersonLoginName");
+        String login = getPersonLoginName(request);
+        personService.resetPersonPassword(login, resetPersonLoginName);
+        return "redirect:/persons";
+    }
 }
