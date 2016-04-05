@@ -24,7 +24,7 @@
         <li>"write" - (confirmed user) - Read and edit Queue;</li>
         <li>"admin" - (administrator) - Manage Saladin;</li>
     </ul>
-    <p>If you want to remove person - click on the "DELETE" button</p>
+    <p>If you want to remove person - click on the "DELETE" button.</p>
     <c:if test="${fn:length(allPersonsList) > 0}">
         <table id="th">
             <tr align="center">
@@ -57,7 +57,10 @@
                     </form>
                     </td>
                     <td>
-                        <p><input id="button_remove_persons" type="submit" value="DELETE" class="button"/></p>
+                        <form method="post" action="remove">
+                            <input type="hidden" name="removedPersonLoginName" value="${person.loginName}"/>
+                            <p><input id="button_remove_persons" type="submit" value="DELETE" class="button"/></p>
+                        </form>
                     </td>
                 </tr>
             </c:forEach>

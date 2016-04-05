@@ -8,16 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
-import javax.servlet.annotation.HttpMethodConstraint;
-import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@ServletSecurity(httpMethodConstraints = {
-        @HttpMethodConstraint(value = "GET", rolesAllowed = "admin"),
-        @HttpMethodConstraint(value = "POST", rolesAllowed = "admin")
-})
 public class PersonsController {
 
     @Inject
@@ -38,6 +32,16 @@ public class PersonsController {
         Person person = (Person) httpSession.getAttribute("person");
         String login = person.getLoginName();
         personService.updatePersonsRights(login, editedPersonLoginName, editedPersonRole);
+        return "redirect:/persons";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String removePerson(HttpServletRequest request) {
+        String removedPersonLoginName = request.getParameter("removedPersonLoginName");
+        HttpSession httpSession = request.getSession();
+        Person person = (Person) httpSession.getAttribute("person");
+        String login = person.getLoginName();
+        personService.removePersonByLogin(login, removedPersonLoginName);
         return "redirect:/persons";
     }
 }

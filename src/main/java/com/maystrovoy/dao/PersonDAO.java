@@ -21,11 +21,20 @@ public class PersonDAO {
     private EntityManager entityManager;
 
     public void addPerson(Person person) {
+        person.setRole("read");
         entityManager.persist(person);
     }
 
     public void mergePerson(Person person) {
         entityManager.merge(person);
+    }
+
+    public void removePersonByLoginName(String adminLogin, String personLoginName) {
+        Person person = getPersonByLogin(personLoginName);
+        if (person != null) {
+            entityManager.remove(person);
+            LOGGER.info("admin :" + adminLogin + " removed person :" + personLoginName);
+        }
     }
 
     public void updatePersons(String login, String editedPersonLoginName, String editedPersonRole) {

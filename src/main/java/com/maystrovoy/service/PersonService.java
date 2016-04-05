@@ -27,6 +27,10 @@ public class PersonService {
     @Inject
     private MessageSource messageSource;
 
+    public void removePersonByLogin(String adminLogin, String personLoginName) {
+        personDAO.removePersonByLoginName(adminLogin, personLoginName);
+    }
+
     public String checkPersonAuthentication(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));
