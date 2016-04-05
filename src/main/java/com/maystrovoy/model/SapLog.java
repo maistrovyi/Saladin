@@ -12,22 +12,22 @@ import java.util.Date;
 public class SapLog implements Serializable {
 
     @Id
-    @Column(name = "QUEUEID")
+    @Column(name = "ID")
     private long queueId;
     @Column(name = "OBJECTID")
     private String targetObject;
     @Column(name = "OBJECTTYPE")
-    private int objectType;
+    private String objectType;
     @Column(name = "STATUS")
     private String status;
     @Column(name = "STARTDATE")
     private Date startDate;
     @Column(name = "FINISHDATE")
     private Date finishDate;
-    @Column(name = "USERNAME")
-    private String userName;
     @Column(name = "MESSAGE")
     private String message;
+    @Column(name = "USERNAME")
+    private String userName;
 
     public SapLog() {
     }
