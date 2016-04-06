@@ -27,7 +27,7 @@ public class PersonsController extends AbstractLoginController {
         String editedPersonRole = request.getParameter("editedPersonRightValue");
         String editedPersonLoginName = request.getParameter("editedPersonLoginName");
         String login = getPersonLoginName(request);
-        personService.updatePersonsRights(login, editedPersonLoginName, editedPersonRole);
+        personService.updatePersonsRole(login, editedPersonLoginName, editedPersonRole);
         return "redirect:/persons";
     }
 

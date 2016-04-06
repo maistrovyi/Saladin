@@ -34,10 +34,10 @@ public class RegistrationDataValidator implements Validator {
         ValidationUtils.rejectIfEmpty(error, "secondName", "personerr.secondname", "Required field");
         ValidationUtils.rejectIfEmpty(error, "loginName", "personerr.loginname", "Required field");
         ValidationUtils.rejectIfEmpty(error, "password", "personerr.password", "Required field");
-        if(!error.hasFieldErrors("password") && !repeatPassword.equals(person.getPassword())){
+        if (!error.hasFieldErrors("password") && !repeatPassword.equals(person.getPassword())) {
             error.rejectValue("password", "personerr.password.repeat", "Password error");
         }
-        if(!error.hasFieldErrors("loginName") && personDAO.isLoginExist(person.getLoginName())){
+        if (!error.hasFieldErrors("loginName") && personDAO.isLoginExist(person.getLoginName())) {
             error.rejectValue("loginName", "personerr.loginname.reserved", "Login error");
         }
         error.popNestedPath();

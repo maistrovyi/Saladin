@@ -10,9 +10,18 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <p>Description:</p>
-    <p>This is home page and content from any link will be displayed here.</p>
-    <p>So now click any link and see the result.</p>
+    <p>WELCOME TO SALADIN!</p>
+    <p>Description :</p>
+    <ul>
+        <li>"HOME" - (HOME PAGE) - ;</li>
+        <li>"CHECK STOCK" - ;</li>
+        <li>"MATERIAL DOCUMENT" - ;</li>
+        <li>"MD UPDATE" - (MATERIAL DOCUMENT UPDATE) - ;</li>
+        <li>"MATERIAL" - ;</li>
+        <li>"ACTIVE QUEUE" - ;</li>
+        <li>"SETTINGS" - ;</li>
+    </ul>
+    <p>For more information : maximo@lifecell.com</p>
 </div>
 </body>
 </html>

@@ -44,6 +44,14 @@ public class PersonDAO {
         }
     }
 
+    public void changePersonPassword(String loginName, String newPassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Person person = getPersonByLogin(loginName);
+        String password = PersonService.getHashedPassword(newPassword, person.getCreationDay());
+        person.setPassword(password);
+        entityManager.persist(person);
+        LOGGER.info("person : " + person.getLoginName() + " successfully changed password");
+    }
+
     public void resetPersonPassword(String login, String resetPersonLoginName) {
         Person person = getPersonByLogin(resetPersonLoginName);
         if (person != null) {
@@ -64,7 +72,7 @@ public class PersonDAO {
 
     }
 
-    public void updatePersons(String login, String editedPersonLoginName, String editedPersonRole) {
+    public void updatePersonRole(String login, String editedPersonLoginName, String editedPersonRole) {
         Person editedPerson = getPersonByLogin(editedPersonLoginName);
         editedPerson.setRole(editedPersonRole);
         LOGGER.info("Admin: " + login + " changed user " + editedPersonLoginName + " priviliges to " + editedPersonRole);

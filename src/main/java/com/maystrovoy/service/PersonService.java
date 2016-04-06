@@ -48,12 +48,15 @@ public class PersonService {
         LOGGER.info("Log in : " + person.getLoginName());
     }
 
+    public void changePersonPassword(String loginName, String newPassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        personDAO.changePersonPassword(loginName, newPassword);
+    }
     public void resetPersonPassword(String login, String resetPersonLoginName) {
         personDAO.resetPersonPassword(login, resetPersonLoginName);
     }
 
-    public void updatePersonsRights(String login, String editedPersonLoginName, String editedPersonRole) {
-        personDAO.updatePersons(login, editedPersonLoginName, editedPersonRole);
+    public void updatePersonsRole(String login, String editedPersonLoginName, String editedPersonRole) {
+        personDAO.updatePersonRole(login, editedPersonLoginName, editedPersonRole);
     }
 
     public void registerPerson(Person person) throws UnsupportedEncodingException, NoSuchAlgorithmException {
@@ -68,12 +71,9 @@ public class PersonService {
     public static String getHashedPassword(String password, String salt) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         String generatedPassword = null;
         String passwordToHash = password + salt;
-
         MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
         messageDigest.update(passwordToHash.getBytes("UTF-8"));
-
         byte[] bytes = messageDigest.digest();
-
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < bytes.length; i++) {
             stringBuilder.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
