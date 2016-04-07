@@ -51,8 +51,8 @@ public class PersonService {
     public void changePersonPassword(String loginName, String newPassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         personDAO.changePersonPassword(loginName, newPassword);
     }
-    public void resetPersonPassword(String login, String resetPersonLoginName) {
-        personDAO.resetPersonPassword(login, resetPersonLoginName);
+    public void resetPersonPassword(String login, String resetPersonLoginName, HttpServletRequest request) {
+        personDAO.resetPersonPassword(login, resetPersonLoginName, request);
     }
 
     public void updatePersonsRole(String login, String editedPersonLoginName, String editedPersonRole) {

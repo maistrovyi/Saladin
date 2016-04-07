@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -52,7 +54,7 @@ public class PersonDAO {
         LOGGER.info("person : " + person.getLoginName() + " successfully changed password");
     }
 
-    public void resetPersonPassword(String login, String resetPersonLoginName) {
+    public void resetPersonPassword(String login, String resetPersonLoginName, HttpServletRequest request) {
         Person person = getPersonByLogin(resetPersonLoginName);
         if (person != null) {
             String password = null;
@@ -66,6 +68,9 @@ public class PersonDAO {
             person.setPassword(password);
             entityManager.persist(person);
             LOGGER.info("admin : " + login + " reset password for person : " + resetPersonLoginName);
+            if (login.equals(resetPersonLoginName)) {
+                request.getSession().invalidate();
+            }
         } else {
             LOGGER.info("failed to reset person password, person is null");
         }

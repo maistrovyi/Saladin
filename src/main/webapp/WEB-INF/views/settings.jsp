@@ -18,10 +18,11 @@
         <div class="box">
             <div class="input_block">
                 <label for="currentPasswordField">Current Password:</label>
-                <form:input type="password" id="currentPasswordField" class="input" path="person.password"/>
+                <form:input type="password" id="currentPasswordField" class="input" path="currentPassword"/>
+                <form:input type="hidden" path="login" value="${person.loginName}"/>
             </div>
             <div class="error_block">
-                <form:errors path="person.password" cssClass="error_label"/>
+                <form:errors path="currentPassword" cssClass="error_label"/>
             </div>
         </div>
 

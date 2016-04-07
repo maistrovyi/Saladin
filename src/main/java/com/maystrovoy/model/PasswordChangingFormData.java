@@ -3,6 +3,8 @@ package com.maystrovoy.model;
 public class PasswordChangingFormData {
 
     Person person;
+    String login;
+    String currentPassword;
     String newPassword;
     String repeatPassword;
 
@@ -16,6 +18,22 @@ public class PasswordChangingFormData {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getCurrentPassword() {
+        return currentPassword;
+    }
+
+    public void setCurrentPassword(String currentPassword) {
+        this.currentPassword = currentPassword;
     }
 
     public String getNewPassword() {

@@ -35,7 +35,7 @@ public class PersonSettingsController extends AbstractLoginController {
     }
 
     @RequestMapping(value = "/settings", method = RequestMethod.GET)
-    private ModelAndView showChfngePasswordForm() {
+    private ModelAndView showChangePasswordForm() {
         final ModelAndView mov = new ModelAndView("settings");
         mov.addObject("passwordChangingFormData", new PasswordChangingFormData());
         return mov;

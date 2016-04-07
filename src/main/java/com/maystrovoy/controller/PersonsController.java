@@ -44,7 +44,7 @@ public class PersonsController extends AbstractLoginController {
     public String resetPersonPassword(HttpServletRequest request) {
         String resetPersonLoginName = request.getParameter("resetPersonLoginName");
         String login = getPersonLoginName(request);
-        personService.resetPersonPassword(login, resetPersonLoginName);
+        personService.resetPersonPassword(login, resetPersonLoginName, request);
         return "redirect:/persons";
     }
 }
