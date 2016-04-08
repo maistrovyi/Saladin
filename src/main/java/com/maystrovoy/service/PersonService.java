@@ -27,8 +27,8 @@ public class PersonService {
     @Inject
     private MessageSource messageSource;
 
-    public void removePersonByLogin(String adminLogin, String personLoginName) {
-        personDAO.removePersonByLoginName(adminLogin, personLoginName);
+    public void removePersonByLogin(String adminLogin, String personLoginName, HttpServletRequest request) {
+        personDAO.removePersonByLoginName(adminLogin, personLoginName, request);
     }
 
     public String getPersonRole(String login) {

@@ -53,19 +53,19 @@
                             </select>
                         </td>
                         <td>
-                            <p><input id="button_persons" type="submit" value="SAVE" class="button"/></p>
+                            <p><input id="button_save_role_persons" type="submit" value="SAVE" onclick="return confirm('Are you sure, that you want to save role of this person?')" class="button"/></p>
                     </form>
                     </td>
                     <td>
                         <form method="post" action="reset">
                             <input type="hidden" name="resetPersonLoginName" value="${person.loginName}"/>
-                            <p><input id="button_reset_persons" type="submit" value="RESET" class="button"/></p>
+                            <p><input id="button_reset_persons" type="submit" value="RESET" onclick="return confirm('Are you sure, that you want to reset password?')" class="button"/></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="remove">
                             <input type="hidden" name="removedPersonLoginName" value="${person.loginName}"/>
-                            <p><input id="button_remove_persons" type="submit" value="DELETE" class="button"/></p>
+                            <p><input id="button_remove_persons" type="submit" value="DELETE" onclick="return confirm('Are you sure, that you want to reset password?')" class="button"/></p>
                         </form>
                     </td>
                 </tr>

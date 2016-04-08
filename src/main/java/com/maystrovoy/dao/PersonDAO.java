@@ -36,10 +36,13 @@ public class PersonDAO {
         entityManager.merge(person);
     }
 
-    public void removePersonByLoginName(String adminLogin, String personLoginName) {
+    public void removePersonByLoginName(String adminLogin, String personLoginName, HttpServletRequest request) {
         Person person = getPersonByLogin(personLoginName);
         if (person != null) {
             entityManager.remove(person);
+            if (adminLogin.equals(personLoginName)) {
+                request.getSession().invalidate();
+            }
             LOGGER.info("admin : " + adminLogin + " removed person : " + personLoginName);
         } else {
             LOGGER.error("failed to remove person, person is null");
