@@ -3,24 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Saladin</title>
+    <title>Saladin| Access denied</title>
     <link rel="stylesheet" type="text/css" href="resources/css/general_style.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <p>WELCOME TO SALADIN!</p>
-    <p>Description :</p>
-    <ul>
-        <li>"HOME" - (HOME PAGE) - ;</li>
-        <li>"CHECK STOCK" - ;</li>
-        <li>"MATERIAL DOCUMENT" - ;</li>
-        <li>"MD UPDATE" - (MATERIAL DOCUMENT UPDATE) - ;</li>
-        <li>"MATERIAL" - ;</li>
-        <li>"ACTIVE QUEUE" - ;</li>
-        <li>"SETTINGS" - ;</li>
-    </ul>
+    <p>ACCESS DENIED!</p>
+    <p><a href="javascript:history.back()" style="color: #4CAF50"><h2>Back</h2></a></p>
+    <p>Description: dear, ${person.loginName}, you don't have permissions to access on this page!</p>
     <p>For more information - maximo@lifecell.com.ua</p>
 </div>
 </body>

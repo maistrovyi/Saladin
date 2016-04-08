@@ -31,6 +31,10 @@ public class PersonService {
         personDAO.removePersonByLoginName(adminLogin, personLoginName);
     }
 
+    public String getPersonRole(String login) {
+        return personDAO.getPersonByLogin(login).getRole();
+    }
+
     public String checkPersonAuthentication(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String authenticationError = null;
         Person person = personDAO.getPersonByLogin(request.getParameter("loginName"));

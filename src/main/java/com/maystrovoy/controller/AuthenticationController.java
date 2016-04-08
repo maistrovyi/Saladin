@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
-public class AuthenticationController {
+public class AuthenticationController extends AbstractLoginController {
 
     private static final Logger LOGGER = LogManager.getLogger(AuthenticationController.class);
 
@@ -36,6 +36,8 @@ public class AuthenticationController {
             mav.addObject("authentication_error", authenticationError);
         } else {
             mav.setViewName("redirect:/home");
+            String login = getPersonLoginName(request);
+            System.out.println("role : " + personService.getPersonRole(login));
         }
         return mav;
     }
@@ -46,5 +48,12 @@ public class AuthenticationController {
         LOGGER.info("Log out : " + person.getLoginName());
         httpSession.invalidate();
         return "redirect:/authentication";
+    }
+
+    @RequestMapping(value = "/access_denied", method = RequestMethod.GET)
+    public ModelAndView accessDenied() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("access_denied");
+        return mav;
     }
 }
