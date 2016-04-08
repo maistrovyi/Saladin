@@ -29,8 +29,11 @@ public class Person implements Serializable {
     private String role;
 
     public ArrayList<String> getTypes() {
-
         return PersonRoleType.filterTypes(role);
+    }
+
+    public ArrayList<String> getMenuItems() {
+        return MenuType.filterTypes(role);
     }
 
     public Person() {}
