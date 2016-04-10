@@ -1,5 +1,6 @@
 package com.maystrovoy.controller;
 
+import com.maystrovoy.model.MenuType;
 import com.maystrovoy.service.MaterialDocumentUpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
 
 @Controller
-public class MaterialDocumentUpdateController extends AbstractLoginController {
+public class MaterialDocumentUpdateController extends AbstractLoginDataController {
 
     @Autowired
     private MaterialDocumentUpdateService materialDocumentUpdateService;
 
     @RequestMapping(value = "update_material_document", method = RequestMethod.GET)
-    public String showCheckStockForm() {
-        return "update_material_document";
+    public String showCheckStockForm(HttpServletRequest request) {
+        return getMenuTypeAccordingToRole(request);
     }
 
     @RequestMapping(value = "update_material_document", method = RequestMethod.POST)
@@ -28,5 +29,10 @@ public class MaterialDocumentUpdateController extends AbstractLoginController {
         String login = getPersonLoginName(request);
         materialDocumentUpdateService.processMaterialDocumentUpdate(year, document, login);
         return "redirect:/update_material_document";
+    }
+
+    @Override
+    protected MenuType getMenuTypeText() {
+        return MenuType.MD_UPDATE;
     }
 }

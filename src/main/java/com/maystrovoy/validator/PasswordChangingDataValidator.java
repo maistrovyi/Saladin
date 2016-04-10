@@ -40,21 +40,23 @@ public class PasswordChangingDataValidator implements Validator {
             if (!error.hasFieldErrors("currentPassword") && !PersonService.getHashedPassword(currentPassword,
                     person.getCreationDay()).equals(person.getPassword())) {
                 error.rejectValue("currentPassword", "personerr.password.invalid", "Password error");
-            }
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
-                !newPassword.equals(repeatPassword)) {
-            error.rejectValue("repeatPassword", "personerr.password.repeat", "Password error");
-        }
-        try {
-            if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
-                    PersonService.getHashedPassword(newPassword,
-                            person.getCreationDay()).equals(person.getPassword())) {
-                error.rejectValue("newPassword", "personerr.password.equals", "Required field");
+            } else {
+                if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
+                        !newPassword.equals(repeatPassword)) {
+                    error.rejectValue("repeatPassword", "personerr.password.repeat", "Password error");
+                }
+                try {
+                    if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
+                            PersonService.getHashedPassword(newPassword,
+                                    person.getCreationDay()).equals(person.getPassword())) {
+                        error.rejectValue("newPassword", "personerr.password.equals", "Required field");
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

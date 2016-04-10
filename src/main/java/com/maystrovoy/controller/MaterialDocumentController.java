@@ -1,5 +1,6 @@
 package com.maystrovoy.controller;
 
+import com.maystrovoy.model.MenuType;
 import com.maystrovoy.service.MaterialDocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
 
 @Controller
-public class MaterialDocumentController extends AbstractLoginController {
+public class MaterialDocumentController extends AbstractLoginDataController {
 
     @Autowired
     private MaterialDocumentService materialDocumentService;
 
     @RequestMapping(value = "material_document", method = RequestMethod.GET)
-    public String showCheckStockForm() {
-        return "material_document";
+    public String showCheckStockForm(HttpServletRequest request) {
+        return getMenuTypeAccordingToRole(request);
     }
 
     @RequestMapping(value = "material_document", method = RequestMethod.POST)
@@ -30,4 +31,8 @@ public class MaterialDocumentController extends AbstractLoginController {
         return "redirect:/material_document";
     }
 
+    @Override
+    protected MenuType getMenuTypeText() {
+        return MenuType.MATERIAL_DOCUMENT;
+    }
 }

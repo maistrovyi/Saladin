@@ -21,7 +21,7 @@
     </div>
     <div id="menu">
         <c:forEach items="${person.getMenuItems()}" var="role" varStatus="loop">
-            <li><a href="${role}">${role}</a></li>
+            <li><a href="${role.getMenuType()}">${role.getMenuName()}</a></li>
         </c:forEach>
     <%--<li><a href="/home">HOME</a></li>--%>
     <%--<li><a href="/check_stock">CHECK STOCK</a></li>--%>

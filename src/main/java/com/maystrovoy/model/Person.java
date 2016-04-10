@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.EnumSet;
 
 @Entity
 @Table(name = "PERSON")
@@ -32,7 +33,7 @@ public class Person implements Serializable {
         return PersonRoleType.filterTypes(role);
     }
 
-    public ArrayList<String> getMenuItems() {
+    public EnumSet<MenuType> getMenuItems() {
         return MenuType.filterTypes(role);
     }
 

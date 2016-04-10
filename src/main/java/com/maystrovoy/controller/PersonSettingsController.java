@@ -1,5 +1,6 @@
 package com.maystrovoy.controller;
 
+import com.maystrovoy.model.MenuType;
 import com.maystrovoy.model.PasswordChangingFormData;
 import com.maystrovoy.service.PersonService;
 import com.maystrovoy.validator.PasswordChangingDataValidator;
@@ -20,7 +21,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
-public class PersonSettingsController extends AbstractLoginController {
+public class PersonSettingsController extends AbstractLoginDataController {
+
+    public static final String PASSWORD_CHANGING_FORM_DATA = "passwordChangingFormData";
 
     @Inject
     private PersonService personService;
@@ -34,14 +37,12 @@ public class PersonSettingsController extends AbstractLoginController {
         binder.setValidator(passwordChangingDataValidator);
     }
 
-    @RequestMapping(value = "/settings", method = RequestMethod.GET)
-    private ModelAndView showChangePasswordForm() {
-        final ModelAndView mov = new ModelAndView("settings");
-        mov.addObject("passwordChangingFormData", new PasswordChangingFormData());
-        return mov;
+    @RequestMapping(value = "settings", method = RequestMethod.GET)
+    private ModelAndView showChangePasswordForm(HttpServletRequest request) {
+        return createModelViewAccordingToRole(request, PASSWORD_CHANGING_FORM_DATA, new PasswordChangingFormData());
     }
 
-    @RequestMapping(value = "/settings", method = RequestMethod.POST)
+    @RequestMapping(value = "settings", method = RequestMethod.POST)
     public ModelAndView processChangePasswordForm(HttpServletRequest request, @ModelAttribute() @Valid final
     PasswordChangingFormData passwordChangingFormData,
                                                   BindingResult bindingResult) throws UnsupportedEncodingException,
@@ -58,4 +59,8 @@ public class PersonSettingsController extends AbstractLoginController {
         return mav;
     }
 
+    @Override
+    protected MenuType getMenuTypeText() {
+        return MenuType.SETTINGS;
+    }
 }

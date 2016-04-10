@@ -1,5 +1,7 @@
 package com.maystrovoy.controller;
 
+import com.maystrovoy.model.MenuType;
+import com.maystrovoy.model.PersonRoleType;
 import com.maystrovoy.service.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,16 +12,26 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class PersonsController extends AbstractLoginController {
+public class PersonsController extends AbstractLoginDataController {
+
+    public static final String ALL_PERSONS_LIST = "allPersonsList";
 
     @Inject
     private PersonService personService;
 
-    @RequestMapping(value = "/persons", method = RequestMethod.GET)
+    @RequestMapping(value = "persons", method = RequestMethod.GET)
     private ModelAndView showActiveQueue(HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("persons");
-        mav.addObject("allPersonsList", personService.getAllPersonsData());
-        return mav;
+        return createModelViewAccordingToRole(request, ALL_PERSONS_LIST, personService.getAllPersonsData());
+    }
+
+    @Override
+    protected boolean meetCondition(String role) {
+        return role.equals(PersonRoleType.ADMIN.getRoleType());
+    }
+
+    @Override
+    protected boolean isAdminOrConfirmed(HttpServletRequest request) {
+        return super.isAdminOrConfirmed(request);
     }
 
     @RequestMapping(value = "persons", method = RequestMethod.POST)
@@ -45,5 +57,10 @@ public class PersonsController extends AbstractLoginController {
         String login = getPersonLoginName(request);
         personService.resetPersonPassword(login, resetPersonLoginName, request);
         return "redirect:/persons";
+    }
+
+    @Override
+    protected MenuType getMenuTypeText() {
+        return MenuType.PERSONS;
     }
 }

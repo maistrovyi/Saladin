@@ -65,7 +65,7 @@
                     <td>
                         <form method="post" action="remove">
                             <input type="hidden" name="removedPersonLoginName" value="${person.loginName}"/>
-                            <p><input id="button_remove_persons" type="submit" value="DELETE" onclick="return confirm('Are you sure, that you want to reset password?')" class="button"/></p>
+                            <p><input id="button_remove_persons" type="submit" value="DELETE" onclick="return confirm('Are you sure, that you want to delete this person?')" class="button"/></p>
                         </form>
                     </td>
                 </tr>
