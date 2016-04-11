@@ -90,6 +90,13 @@ input:focus {
     outline: none;
 }
 
+input[type=submit]:disabled,
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #af1241;
+}
+
 #select {
     font-family: Cursive;
 }

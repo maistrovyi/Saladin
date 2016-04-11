@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="/resources/js/disabledSubmitButton.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -14,8 +15,8 @@
     <p>Description:</p>
     <p>Please, input "Document" field to update material document from SAP.</p>
     <form method="post" action="update_material_document">
-        <p>Document:<input type="text" name="document"/></p>
-        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button"/></p>
+        <p>Document:<input type="text" onchange="checkEmptyFieldMaterial(this.value)" name="document"/></p>
+        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button" disabled="disabled"/></p>
     </form>
 </div>
 </body>
