@@ -101,3 +101,10 @@ button:disabled {
     font-family: Cursive;
 }
 
+.error_label {
+    text-align: left;
+    color: wheat;
+    font-family: "Quicksand";
+    font-size: 130%;
+}
+

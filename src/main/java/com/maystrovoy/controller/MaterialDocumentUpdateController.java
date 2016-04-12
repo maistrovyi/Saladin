@@ -27,8 +27,13 @@ public class MaterialDocumentUpdateController extends AbstractLoginDataControlle
         String year = currentYear.toString();
         String document = request.getParameter("document");
         String login = getPersonLoginName(request);
-        materialDocumentUpdateService.processMaterialDocumentUpdate(year, document, login);
-        return "redirect:/update_material_document";
+        String errorMsg = materialDocumentUpdateService.processMaterialDocumentUpdate(year, document, login);
+        if (errorMsg == null) {
+            return "redirect:/update_material_document";
+        } else {
+            request.setAttribute("error", errorMsg);
+            return "update_material_document";
+        }
     }
 
     @Override

@@ -27,11 +27,18 @@ public class MaterialDocumentUpdateService {
     @Autowired
     private SapLogFactory sapLogFactory;
 
-    public void processMaterialDocumentUpdate(String year, String document, String login) {
-        LOGGER.info("Material Document query : " + year + "-" + document + " by user: "+ login);
+    public String processMaterialDocumentUpdate(String year, String document, String login) {
+        String error;
+        LOGGER.info("Material Document query : " + year + "-" + document + " by user: " + login);
         SapLog sapLog = sapLogFactory.createInstance(document);
-        materialDocumentDAO.removeQueueFromSapLog(sapLog);
-        Queue queue = queueFactory.createInstance(year + "_" + document, login, QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
-        materialDocumentDAO.addQueue(queue);
+        if (materialDocumentDAO.removeQueueFromSapLog(sapLog) == true) {
+            Queue queue = queueFactory.createInstance(year + "_" + document, login, QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
+            materialDocumentDAO.addQueue(queue);
+            error = null;
+        } else {
+            LOGGER.error("Material Document insert error : SAP_LOG object is empty!");
+            error = "This document doesn't exist! Please, input correct document name.";
+        }
+        return error;
     }
 }

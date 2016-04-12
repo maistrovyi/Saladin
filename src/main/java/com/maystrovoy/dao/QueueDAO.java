@@ -21,20 +21,26 @@ public class QueueDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void removeQueueFromSapLog(SapLog sapLog) {
-        LOGGER.info("remove from SapLog objectid : " + sapLog.getTargetObject());
+    public boolean removeQueueFromSapLog(SapLog sapLog) {
         sapLog = getSapLog(sapLog);
         if (sapLog != null) {
             entityManager.remove(sapLog);
+            LOGGER.info("remove from SapLog objectid : " + sapLog.getTargetObject());
+            return true;
         } else {
-            LOGGER.error("Removing failed, SAP_LOG is empty");
+            LOGGER.error("Removing failed, SAP_LOG object is empty");
+            return false;
         }
     }
 
     private SapLog getSapLog(SapLog sapLog) {
         Query findSapLog = entityManager.createQuery("select q from SapLog q where q.targetObject = :activeParameter");
         findSapLog.setParameter("activeParameter", sapLog.getTargetObject());
-        sapLog = (SapLog) findSapLog.getSingleResult();
+        if (findSapLog.getResultList().size() > 0) {
+            sapLog = (SapLog) findSapLog.getSingleResult();
+        } else {
+            sapLog = null;
+        }
         return sapLog;
     }
 

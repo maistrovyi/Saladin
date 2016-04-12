@@ -15,8 +15,11 @@
     <p>Description:</p>
     <p>Please, input "Document" field to update material document from SAP.</p>
     <form method="post" action="update_material_document">
-        <p>Document:<input type="text" onchange="checkEmptyFieldMaterial(this.value)" name="document"/></p>
-        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button" disabled="disabled"/></p>
+        </span>
+            Document:<input type="text" onchange="checkEmptyFieldMaterial(this.value)" name="document"/>
+            <label class="error_label">${error}</label>
+        <span>
+        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button" onclick="printIt()" disabled="disabled"/></p>
     </form>
 </div>
 </body>
