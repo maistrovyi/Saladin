@@ -43,9 +43,9 @@ public class CheckStockService {
     }
 
     public String checkCorrectLocationValue(String location) throws SQLException {
-        String error;
+        String error = null;
+        try (Connection connection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD)) {
         DriverManager.registerDriver(new OracleDriver());
-        Connection connection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
         System.out.println("Connection into MAXIMO2T LOCATIONS ... ");
         PreparedStatement preparedStatement = connection.prepareStatement(LOCATION_QUERY);
         preparedStatement.setString(1, location);
@@ -63,28 +63,34 @@ public class CheckStockService {
         if (connection.isClosed()) {
             System.out.println("Connection Location closed!");
         }
+        } catch (Exception e) {
+            LOGGER.error("Error closing connection!");
+        }
         return error;
     }
 
-    public String checkCorrectMaterialValue(String material) throws SQLException {
-        String error;
-        DriverManager.registerDriver(new OracleDriver());
-        Connection connection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
-        System.out.println("Connection into MAXIMO2T ITEM ... ");
-        PreparedStatement preparedStatement = connection.prepareStatement(MATERIAL_QUERY);
-        preparedStatement.setString(1, material);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        System.out.println("Executing query ... ");
-        if (!resultSet.next()) {
-            error = "Material is invalid! Please, input correct material.";
-        } else {
-            error = null;
-        }
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
-        if (connection.isClosed()) {
-            System.out.println("Connection Material closed!");
+    public String checkCorrectMaterialValue(String material) {
+        String error = null;
+        try (Connection connection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD)) {
+            DriverManager.registerDriver(new OracleDriver());
+            System.out.println("Connection into MAXIMO2T ITEM ... ");
+            PreparedStatement preparedStatement = connection.prepareStatement(MATERIAL_QUERY);
+            preparedStatement.setString(1, material);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("Executing query ... ");
+            if (!resultSet.next()) {
+                error = "Material is invalid! Please, input correct material.";
+            } else {
+                error = null;
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+            if (connection.isClosed()) {
+                System.out.println("Connection Material closed!");
+            }
+        } catch (Exception e) {
+            LOGGER.error("Error closing connection!");
         }
         return error;
     }

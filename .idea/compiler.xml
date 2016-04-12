@@ -33,7 +33,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="IntegrationControl" target="1.6" />
+      <module name="IntegrationControl" target="1.7" />
       <module name="Spring4WebMVC" target="1.6" />
     </bytecodeTargetLevel>
   </component>
