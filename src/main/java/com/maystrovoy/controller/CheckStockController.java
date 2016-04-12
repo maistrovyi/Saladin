@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 @Controller
 public class CheckStockController extends AbstractLoginDataController {
@@ -21,12 +22,20 @@ public class CheckStockController extends AbstractLoginDataController {
     }
 
     @RequestMapping(value = "check_stock", method = RequestMethod.POST)
-    public String processCheckStockForm(HttpServletRequest request) {
+    public String processCheckStockForm(HttpServletRequest request) throws SQLException {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
         String login = getPersonLoginName(request);
-        checkStockService.processCheckStock(location, material, login);
-        return "redirect:/check_stock";
+        String locationMessage = checkStockService.checkCorrectLocationValue(location);
+        String materialMessage = checkStockService.checkCorrectMaterialValue(material);
+        if (locationMessage == null && materialMessage == null) {
+            checkStockService.processCheckStock(location, material, login);
+            return "redirect:/check_stock";
+        } else {
+            request.setAttribute("locationValueError", locationMessage);
+            request.setAttribute("materialValueError", materialMessage);
+            return "check_stock";
+        }
     }
 
     @Override

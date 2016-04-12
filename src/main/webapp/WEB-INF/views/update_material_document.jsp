@@ -19,7 +19,7 @@
             Document:<input type="text" onchange="checkEmptyFieldMaterial(this.value)" name="document"/>
             <label class="error_label">${error}</label>
         <span>
-        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button" onclick="printIt()" disabled="disabled"/></p>
+        <p><input type="submit" id="button_mat_doc" value="UPDATE MD" class="button" disabled="disabled"/></p>
     </form>
 </div>
 </body>

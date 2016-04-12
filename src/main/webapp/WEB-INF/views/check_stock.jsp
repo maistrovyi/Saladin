@@ -15,8 +15,15 @@
     <p>Description:</p>
     <p>Please, input "Location" and "Material" fields to get check stock from SAP.</p>
     <form method="post" name="Form" action="check_stock">
-        <p>Location:<input id="button_check_stock_m" type="text" onchange="checkEmptyCheckStockFields()" name="location"/></p>
-        <p>Material:<input type="text" onchange="checkEmptyCheckStockFields()" name="material"/></p>
+        <span>
+            Location:<input id="button_check_stock_m" type="text" onchange="checkEmptyCheckStockFields()" name="location"/>
+            <label class="error_label">${locationValueError}</label>
+        </span>
+        <p></p>
+        <span>
+            Material:<input type="text" onchange="checkEmptyCheckStockFields()" name="material"/>
+            <label class="error_label">${materialValueError}</label>
+        </span>
         <p><input type="submit" id="submitButton" value="GET CHECK STOCK" class="button" disabled="disabled"/></p>
     </form>
 </div>

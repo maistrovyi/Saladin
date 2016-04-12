@@ -13,13 +13,13 @@
     <p>WELCOME TO SALADIN!</p>
     <p>Description :</p>
     <ul>
-        <li>"HOME" - (HOME PAGE) - ;</li>
-        <li>"CHECK STOCK" - ;</li>
-        <li>"MATERIAL DOCUMENT" - ;</li>
-        <li>"MD UPDATE" - (MATERIAL DOCUMENT UPDATE) - ;</li>
-        <li>"MATERIAL" - ;</li>
-        <li>"ACTIVE QUEUE" - ;</li>
-        <li>"SETTINGS" - ;</li>
+        <li>"HOME" - home page;</li>
+        <li>"CHECK STOCK" - data synchronization with SAP in the number of materials to the location;</li>
+        <li>"MATERIAL DOCUMENT" - initial loading of documents and materials;</li>
+        <li>"MD UPDATE" - (MATERIAL DOCUMENT UPDATE) - restart incorrectly processed document materials;</li>
+        <li>"MATERIAL" - initial processing of the material documents;</li>
+        <li>"ACTIVE QUEUE" - view document material that are in the queue for processing;</li>
+        <li>"SETTINGS" - password changing;</li>
     </ul>
     <p>For more information - maximo@lifecell.com.ua</p>
 </div>
