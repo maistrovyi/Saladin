@@ -12,8 +12,14 @@ function checkEmptyFieldMaterial(text) {
         document.getElementById("button_mat_doc").disabled = true;
 }
 
-function checkEmptyLocationField() {
-    return document.getElementById('button_check_stock_m').value;
+function checkEmptyCheckStockFields() {
+    var a = document.forms["Form"]["location"].value;
+    var b = document.forms["Form"]["material"].value;
+    if (a.length > 0 && b.length > 0)
+        document.getElementById("submitButton").disabled = false;
+    else
+        document.getElementById("submitButton").disabled = true;
 }
+
 
 

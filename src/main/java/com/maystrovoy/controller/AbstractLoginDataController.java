@@ -4,6 +4,8 @@ import com.maystrovoy.model.MenuType;
 import com.maystrovoy.model.Person;
 import com.maystrovoy.model.PersonRoleType;
 import com.maystrovoy.service.PersonService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,6 +15,8 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public abstract class AbstractLoginDataController {
+
+    private static final Logger LOGGER = LogManager.getLogger(AbstractLoginDataController.class);
 
     public static final String ACCESS_DENIED = "access_denied";
 
@@ -25,6 +29,7 @@ public abstract class AbstractLoginDataController {
         if (isAdminOrConfirmed(request)) {
             return getMenuTypeText().getMenuType();
         } else {
+            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " + getMenuTypeText().getMenuName() + " page. Access denied!");
             return ACCESS_DENIED;
         }
     }
@@ -34,6 +39,7 @@ public abstract class AbstractLoginDataController {
         if (isAdminOrConfirmed(request)) {
             mav.addObject(objStr, attributeValue);
         } else {
+            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " + getMenuTypeText().getMenuName() + " page. Access denied!");
             mav.setViewName(ACCESS_DENIED);
         }
         return mav;
