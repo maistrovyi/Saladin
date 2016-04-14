@@ -63,4 +63,5 @@ public class PersonSettingsController extends AbstractLoginDataController {
     protected MenuType getMenuTypeText() {
         return MenuType.SETTINGS;
     }
+
 }

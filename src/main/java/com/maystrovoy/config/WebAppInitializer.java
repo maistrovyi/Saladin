@@ -29,7 +29,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         String servletName = getServletName();
         Assert.hasLength(servletName, "getServletName() may not return empty or null");
         WebApplicationContext servletAppContext = createServletApplicationContext();
-        Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application context for servlet [" + servletName + "]");
+        Assert.notNull(servletAppContext, "createServletApplicationContext() did not return an application context " +
+                "for servlet [" + servletName + "]");
         DispatcherServlet dispatcherServlet = new DispatcherServlet(servletAppContext);
         LOGGER.info("Loading Integration Control " + new Date());
         String path = System.getProperty("catalina.home");
@@ -37,7 +38,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         System.out.println("Set dispatcher throw exception");
         ServletRegistration.Dynamic registration = servletContext.addServlet(servletName, dispatcherServlet);
-        Assert.notNull(registration, "Failed to register servlet with name '" + servletName + "'.Check if there is another servlet registered under the same name.");
+        Assert.notNull(registration, "Failed to register servlet with name '" + servletName + "'.Check if there is " +
+                "another servlet registered under the same name.");
         registration.setLoadOnStartup(1);
         registration.addMapping(getServletMappings());
         registration.setAsyncSupported(isAsyncSupported());

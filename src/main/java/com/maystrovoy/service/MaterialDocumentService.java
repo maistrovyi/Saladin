@@ -22,8 +22,10 @@ public class MaterialDocumentService {
     private QueueFactory queueFactory;
 
     public void processMaterialDocument(String year, String document, String login) {
-        LOGGER.info("Material Document query : " + year + "-" + document + " by user: "+ login);
-        Queue queue = queueFactory.createInstance(year + "_" + document, login, QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
+        LOGGER.info("Material Document query : " + year + "-" + document + " by user: " + login);
+        Queue queue = queueFactory.createInstance(year + "_" + document, login,
+                QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
         materialDocumentDAO.addQueue(queue);
     }
+
 }

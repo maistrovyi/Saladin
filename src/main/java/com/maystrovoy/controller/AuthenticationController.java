@@ -29,7 +29,8 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/authentication", method = RequestMethod.POST)
-    private ModelAndView checkAuthenticationData(HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    private ModelAndView checkAuthenticationData(HttpServletRequest request) throws
+            UnsupportedEncodingException, NoSuchAlgorithmException {
         ModelAndView mav = new ModelAndView("authentication");
         String authenticationError = personService.checkPersonAuthentication(request);
         if (authenticationError != null) {

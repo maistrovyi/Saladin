@@ -28,8 +28,9 @@ public class MaterialService {
 
     public void processMaterial(String material, String login) {
         String materialSap = optimizeMaterialValue(material);
-        LOGGER.info("Material query : " + materialSap + " by user: "+ login);
-        Queue queue = queueFactory.createInstance(materialSap, login, QueueFactory.ObjectType.MATERIAL.getObjectTypeValue());
+        LOGGER.info("Material query : " + materialSap + " by user: " + login);
+        Queue queue = queueFactory.createInstance(materialSap, login,
+                QueueFactory.ObjectType.MATERIAL.getObjectTypeValue());
         materialDAO.addQueue(queue);
     }
 
@@ -44,10 +45,10 @@ public class MaterialService {
                 material = "0" + material;
             }
             optimizedValue = material;
-        }
-        else {
+        } else {
             optimizedValue = material;
         }
         return optimizedValue;
     }
+
 }

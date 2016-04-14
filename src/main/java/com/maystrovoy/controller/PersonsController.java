@@ -63,4 +63,5 @@ public class PersonsController extends AbstractLoginDataController {
     protected MenuType getMenuTypeText() {
         return MenuType.PERSONS;
     }
+
 }

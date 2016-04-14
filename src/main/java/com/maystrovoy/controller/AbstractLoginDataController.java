@@ -29,17 +29,20 @@ public abstract class AbstractLoginDataController {
         if (isAdminOrConfirmed(request)) {
             return getMenuTypeText().getMenuType();
         } else {
-            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " + getMenuTypeText().getMenuName() + " page. Access denied!");
+            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " +
+                    getMenuTypeText().getMenuName() + " page. Access denied!");
             return ACCESS_DENIED;
         }
     }
 
-    protected ModelAndView createModelViewAccordingToRole(HttpServletRequest request, String objStr, Object attributeValue) {
+    protected ModelAndView createModelViewAccordingToRole(HttpServletRequest request,
+                                                          String objStr, Object attributeValue) {
         ModelAndView mav = new ModelAndView(getMenuTypeText().getMenuType());
         if (isAdminOrConfirmed(request)) {
             mav.addObject(objStr, attributeValue);
         } else {
-            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " + getMenuTypeText().getMenuName() + " page. Access denied!");
+            LOGGER.info("Person : " + getPersonLoginName(request) + " tried to enter on " +
+                    getMenuTypeText().getMenuName() + " page. Access denied!");
             mav.setViewName(ACCESS_DENIED);
         }
         return mav;
@@ -52,7 +55,8 @@ public abstract class AbstractLoginDataController {
     }
 
     protected boolean meetCondition(String role) {
-        return role.equals(PersonRoleType.ADMIN.getRoleType()) || role.equals(PersonRoleType.CONFIRMED_USER.getRoleType());
+        return role.equals(PersonRoleType.ADMIN.getRoleType()) ||
+                role.equals(PersonRoleType.CONFIRMED_USER.getRoleType());
     }
 
     protected String getPersonLoginName(HttpServletRequest request) {

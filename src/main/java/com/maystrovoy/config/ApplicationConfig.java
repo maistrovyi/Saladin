@@ -18,16 +18,28 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class ApplicationConfig {
 
+    /*to change the settings of database connection - change these settings*/
+    /*Test DataBase settings*/
+    public static final String DB_CONNECTION_TEST = "jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T";
+    public static final String DB_USER_TEST = "MXSAP";
+    public static final String DB_PASSWORD_TEST = "INTEGRATION";
+
+    /*Production DataBase settings*/
+//    public static final String DB_CONNECTION_PROD = "jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T";
+//    public static final String DB_USER_PROD = "MXSAP";
+//    public static final String DB_PASSWORD_PROD = "INTEGRATION";
+
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T");
-        dataSource.setUsername("MXSAP");
-        dataSource.setPassword("INTEGRATION");
+        dataSource.setUrl(DB_CONNECTION_TEST);
+        dataSource.setUsername(DB_USER_TEST);
+        dataSource.setPassword(DB_PASSWORD_TEST);
         return dataSource;
     }
 
+    /*Personal Test DataBase settings*/
 //    @Bean
 //    public DriverManagerDataSource dataSource() {
 //        DriverManagerDataSource dataSource = new DriverManagerDataSource();

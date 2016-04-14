@@ -47,7 +47,8 @@ public class QueueDAO {
     public void addQueue(Queue queue) {
         if (queue != null) {
             entityManager.persist(queue);
-            LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : " + queue.getObjectType());
+            LOGGER.info("add into Queue objectid : " + queue.getTargetObject() + "," + " objecttype : "
+                    + queue.getObjectType());
         } else {
             LOGGER.error("Adding failed, QUEUE is empty");
         }

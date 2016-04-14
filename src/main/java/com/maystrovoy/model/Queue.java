@@ -41,7 +41,8 @@ public class Queue implements Serializable {
         message = null;
     }
 
-    public Queue(long queueId, String targetObject, int objectType, String status, Date startDate, Date finishDate, String userName, String message) {
+    public Queue(long queueId, String targetObject, int objectType, String status, Date startDate,
+                 Date finishDate, String userName, String message) {
         this.queueId = queueId;
         this.targetObject = targetObject;
         this.objectType = objectType;

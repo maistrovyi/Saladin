@@ -17,7 +17,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = Application.class, includeFilters = @ComponentScan.Filter({Controller.class, Component.class}), useDefaultFilters = false)
+@ComponentScan(basePackageClasses = Application.class,
+        includeFilters = @ComponentScan.Filter({Controller.class, Component.class}), useDefaultFilters = false)
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages";

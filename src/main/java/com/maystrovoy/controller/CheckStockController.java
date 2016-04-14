@@ -26,8 +26,8 @@ public class CheckStockController extends AbstractLoginDataController {
         String location = request.getParameter("location");
         String material = request.getParameter("material");
         String login = getPersonLoginName(request);
-        String locationMessage = checkStockService.checkCorrectLocationValue(location);
-        String materialMessage = checkStockService.checkCorrectMaterialValue(material);
+        String locationMessage = checkStockService.checkCorrectLocationValue(location, login);
+        String materialMessage = checkStockService.checkCorrectMaterialValue(material, login);
         if (locationMessage == null && materialMessage == null) {
             checkStockService.processCheckStock(location, material, login);
             return "redirect:/check_stock";

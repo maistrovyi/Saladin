@@ -32,7 +32,8 @@ public class MaterialDocumentUpdateService {
         LOGGER.info("Material Document query : " + year + "-" + document + " by user: " + login);
         SapLog sapLog = sapLogFactory.createInstance(document);
         if (materialDocumentDAO.removeQueueFromSapLog(sapLog) == true) {
-            Queue queue = queueFactory.createInstance(year + "_" + document, login, QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
+            Queue queue = queueFactory.createInstance(year + "_" + document, login,
+                    QueueFactory.ObjectType.MATERIAL_DOCUMENT.getObjectTypeValue());
             materialDocumentDAO.addQueue(queue);
             error = null;
         } else {
@@ -41,4 +42,5 @@ public class MaterialDocumentUpdateService {
         }
         return error;
     }
+
 }
