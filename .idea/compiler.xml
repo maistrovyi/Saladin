@@ -30,10 +30,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="IntegrationControl" />
+        <module name="Saladin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="IntegrationControl" target="1.7" />
+      <module name="Saladin" target="1.7" />
       <module name="Spring4WebMVC" target="1.6" />
     </bytecodeTargetLevel>
   </component>

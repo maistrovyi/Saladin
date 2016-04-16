@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IntegrationControl.iml" filepath="$PROJECT_DIR$/IntegrationControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Saladin.iml" filepath="$PROJECT_DIR$/Saladin.iml" />
     </modules>
   </component>
 </project>

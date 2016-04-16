@@ -40,4 +40,5 @@ public class MaterialDocumentUpdateController extends AbstractLoginDataControlle
     protected MenuType getMenuTypeText() {
         return MenuType.MD_UPDATE;
     }
+    
 }

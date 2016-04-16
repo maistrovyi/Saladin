@@ -116,4 +116,5 @@ public class Queue implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }

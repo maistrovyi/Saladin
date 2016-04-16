@@ -24,4 +24,5 @@ public class RegistrationFormData {
     public void setRepeatPassword(String repeatPassword) {
         this.repeatPassword = repeatPassword;
     }
+
 }

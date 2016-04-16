@@ -32,4 +32,5 @@ public class MaterialController extends AbstractLoginDataController {
     protected MenuType getMenuTypeText() {
         return MenuType.MATERIAL;
     }
+
 }

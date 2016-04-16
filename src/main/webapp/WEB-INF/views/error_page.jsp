@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Error | Saladin</title>
-    <link rel="stylesheet" type="text/css" href="resources/css/error_style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/error_style.css">
     <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>

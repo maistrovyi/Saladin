@@ -39,6 +39,7 @@ li a:hover {
 }
 
 #user_panel {
+    position: fixed; right: 0;
     font-family: "Quicksand";
     background-color: #58AF71;
     display: block;

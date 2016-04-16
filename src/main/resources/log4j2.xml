@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="trace">
     <Appenders>
-        <RollingFile name="RollingFile" fileName="${sys:catalina.home}\logs\Saladin-${date:yyyy-MM-dd}.log"
-                     filePattern="${sys:catalina.home}\logs\Saladin-%d{yyyy-MM-dd}.log">
+        <RollingFile name="RollingFile" fileName="${sys:catalina.home}/logs/Saladin-${date:yyyy-MM-dd}.log"
+                     filePattern="${sys:catalina.home}/logs/Saladin-%d{yyyy-MM-dd}.log">
             <PatternLayout>
-                <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- |%method| %c{1}: %m%n</pattern>
+                <pattern>%d{DEFAULT} | - |%method| %c{1}: %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy/>

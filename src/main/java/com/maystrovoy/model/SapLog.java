@@ -43,4 +43,5 @@ public class SapLog implements Serializable {
     public void setTargetObject(String targetObject) {
         this.targetObject = targetObject;
     }
+
 }

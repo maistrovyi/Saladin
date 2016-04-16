@@ -16,4 +16,5 @@ public class SapLogFactory extends AbstractFactory {
         SapLog sapLog = new SapLog(targetObject);
         return sapLog;
     }
+
 }

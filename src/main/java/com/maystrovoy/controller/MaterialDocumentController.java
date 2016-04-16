@@ -35,4 +35,5 @@ public class MaterialDocumentController extends AbstractLoginDataController {
     protected MenuType getMenuTypeText() {
         return MenuType.MATERIAL_DOCUMENT;
     }
+
 }

@@ -43,8 +43,8 @@ public class CheckStockService {
     public String checkCorrectLocationValue(String location, String login) throws SQLException {
         String error = null;
         LOGGER.info("Person " + login + " open " + LOCATION_QUERY + " connection for checking location: " + location);
-        try (Connection connection = DriverManager.getConnection(ApplicationConfig.DB_CONNECTION_TEST,
-                ApplicationConfig.DB_USER_TEST, ApplicationConfig.DB_PASSWORD_TEST)) {
+        try (Connection connection = DriverManager.getConnection(ApplicationConfig.DB_CONNECTION_LOCAL,
+                ApplicationConfig.DB_USER_LOCAL, ApplicationConfig.DB_PASSWORD_LOCAL)) {
             DriverManager.registerDriver(new OracleDriver());
             PreparedStatement preparedStatement = connection.prepareStatement(LOCATION_QUERY);
             preparedStatement.setString(1, location);
@@ -66,8 +66,8 @@ public class CheckStockService {
     public String checkCorrectMaterialValue(String material, String login) {
         String error = null;
         LOGGER.info("Person " + login + " open " + MATERIAL_QUERY + " connection for checking material: " + material);
-        try (Connection connection = DriverManager.getConnection(ApplicationConfig.DB_CONNECTION_TEST,
-                ApplicationConfig.DB_USER_TEST, ApplicationConfig.DB_PASSWORD_TEST)) {
+        try (Connection connection = DriverManager.getConnection(ApplicationConfig.DB_CONNECTION_LOCAL,
+                ApplicationConfig.DB_USER_LOCAL, ApplicationConfig.DB_PASSWORD_LOCAL)) {
             DriverManager.registerDriver(new OracleDriver());
             PreparedStatement preparedStatement = connection.prepareStatement(MATERIAL_QUERY);
             preparedStatement.setString(1, material);

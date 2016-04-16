@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.maystrovoy</groupId>
-    <artifactId>IntegrationControl</artifactId>
+    <artifactId>Saladin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
