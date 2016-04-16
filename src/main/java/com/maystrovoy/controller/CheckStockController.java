@@ -30,7 +30,7 @@ public class CheckStockController extends AbstractLoginDataController {
         String materialMessage = checkStockService.checkCorrectMaterialValue(material, login);
         if (locationMessage == null && materialMessage == null) {
             checkStockService.processCheckStock(location, material, login);
-            return "redirect:/check_stock";
+            return "redirect:/success";
         } else {
             request.setAttribute("locationValueError", locationMessage);
             request.setAttribute("materialValueError", materialMessage);

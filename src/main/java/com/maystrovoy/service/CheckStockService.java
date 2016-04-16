@@ -17,8 +17,10 @@ import java.sql.*;
 @Service
 public class CheckStockService {
 
-    private final String LOCATION_QUERY = "SELECT LOCATION FROM MAXIMO.LOCATIONS WHERE LOCATION = ?";
-    private final String MATERIAL_QUERY = "SELECT ITEMNUM FROM MAXIMO.ITEM WHERE ITEMNUM = ?";
+//    private final String LOCATION_QUERY = "SELECT LOCATION FROM MAXIMO.LOCATIONS WHERE LOCATION = ?";
+//    private final String MATERIAL_QUERY = "SELECT ITEMNUM FROM MAXIMO.ITEM WHERE ITEMNUM = ?";
+    private final String LOCATION_QUERY = "SELECT LOCATION FROM MAYSTROVOY.LOCATIONS WHERE LOCATION = ?";
+    private final String MATERIAL_QUERY = "SELECT ITEMNUM FROM MAYSTROVOY.ITEM WHERE ITEMNUM = ?";
 
     private static final Logger LOGGER = LogManager.getLogger(CheckStockService.class);
 
@@ -51,6 +53,7 @@ public class CheckStockService {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (!resultSet.next()) {
                 error = "Location is invalid! Please, input correct location.";
+                LOGGER.info("Location : " + location + " is invalid - CheckStock not allowed!");
             } else {
                 error = null;
             }
@@ -74,6 +77,7 @@ public class CheckStockService {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (!resultSet.next()) {
                 error = "Material is invalid! Please, input correct material.";
+                LOGGER.info("Material : " + material + " is invalid - CheckStock not allowed!");
             } else {
                 error = null;
             }
