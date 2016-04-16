@@ -29,7 +29,7 @@ public class MaterialDocumentUpdateController extends AbstractLoginDataControlle
         String login = getPersonLoginName(request);
         String errorMsg = materialDocumentUpdateService.processMaterialDocumentUpdate(year, document, login);
         if (errorMsg == null) {
-            return "redirect:/update_material_document";
+            return "redirect:/success";
         } else {
             request.setAttribute("error", errorMsg);
             return "update_material_document";

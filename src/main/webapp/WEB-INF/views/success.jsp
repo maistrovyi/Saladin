@@ -10,7 +10,9 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div id="content">
-    <p>Success!</p>
+    <p>Operation completed successfully!</p>
+    <p>You can see the result of operation in "ACTIVE QUEUE" or go to other menu operations.</p>
+    <p>For more information - maximo@lifecell.com.ua</p>
 </div>
 </body>
 </html>

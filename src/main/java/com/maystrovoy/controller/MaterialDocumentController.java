@@ -28,7 +28,7 @@ public class MaterialDocumentController extends AbstractLoginDataController {
         String document = request.getParameter("document");
         String login = getPersonLoginName(request);
         materialDocumentService.processMaterialDocument(year, document, login);
-        return "redirect:/material_document";
+        return "redirect:/success";
     }
 
     @Override

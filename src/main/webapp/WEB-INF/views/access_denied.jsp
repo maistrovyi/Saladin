@@ -11,7 +11,7 @@
 <jsp:include page="header.jsp"/>
 <div id="content">
     <p>ACCESS DENIED!</p>
-    <p><a href="javascript:history.back()" style="color: #4CAF50"><h2>Back</h2></a></p>
+    <p><a href="javascript:history.back()" style="color: #4CAF50"><h2>BACK</h2></a></p>
     <p>Description: dear, ${person.loginName}, you don't have permissions to access on this page!</p>
     <p>For more information - maximo@lifecell.com.ua</p>
 </div>

@@ -25,7 +25,7 @@ public class MaterialController extends AbstractLoginDataController {
         String material = request.getParameter("material");
         String login = getPersonLoginName(request);
         materialService.processMaterial(material, login);
-        return "redirect:/simple_material";
+        return "redirect:/success";
     }
 
     @Override
