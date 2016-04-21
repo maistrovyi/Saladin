@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -22,9 +23,12 @@ public class QueueDAO {
     private EntityManager entityManager;
 
     public boolean removeQueueFromSapLog(SapLog sapLog) {
-        sapLog = getSapLog(sapLog);
-        if (sapLog != null) {
-            entityManager.remove(sapLog);
+        ArrayList<SapLog> sapLogs = getSapLog(sapLog);
+        if (sapLogs != null) {
+            for (int i = 0; i < sapLogs.size(); i++) {
+                SapLog sapLogToDelete = sapLogs.get(i);
+                entityManager.remove(sapLogToDelete);
+            }
             LOGGER.info("remove from SapLog objectid : " + sapLog.getTargetObject());
             return true;
         } else {
@@ -33,15 +37,16 @@ public class QueueDAO {
         }
     }
 
-    private SapLog getSapLog(SapLog sapLog) {
+    private ArrayList<SapLog> getSapLog(SapLog sapLog) {
         Query findSapLog = entityManager.createQuery("select q from SapLog q where q.targetObject = :activeParameter");
         findSapLog.setParameter("activeParameter", sapLog.getTargetObject());
+        ArrayList<SapLog> resultList;
         if (findSapLog.getResultList().size() > 0) {
-            sapLog = (SapLog) findSapLog.getSingleResult();
+            resultList = (ArrayList<SapLog>) findSapLog.getResultList();
         } else {
-            sapLog = null;
+            resultList = null;
         }
-        return sapLog;
+        return resultList;
     }
 
     public void addQueue(Queue queue) {

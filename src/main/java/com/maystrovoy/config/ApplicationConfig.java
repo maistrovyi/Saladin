@@ -24,23 +24,18 @@ public class ApplicationConfig {
 //    public static final String DB_USER_TEST = "MXSAP";
 //    public static final String DB_PASSWORD_TEST = "INTEGRATION";
 
-    /*Personal Test DataBase settings*/
-    public static final String DB_CONNECTION_LOCAL = "jdbc:oracle:thin:@//localhost:1521/XE";
-    public static final String DB_USER_LOCAL = "maystrovoy";
-    public static final String DB_PASSWORD_LOCAL = "admin";
-
     /*Production DataBase settings*/
-//    public static final String DB_CONNECTION_LOCAL = "jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T";
-//    public static final String DB_USER_LOCAL = "MXSAP";
-//    public static final String DB_PASSWORD_LOCAL = "INTEGRATION";
+    public static final String DB_CONNECTION_PROD = "jdbc:Oracle:thin:@10.1.32.33:1521:MAXIMO2";
+    public static final String DB_USER_PROD = "MXSAP";
+    public static final String DB_PASSWORD_PROD = "INTEGRATION";
 
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl(DB_CONNECTION_LOCAL);
-        dataSource.setUsername(DB_USER_LOCAL);
-        dataSource.setPassword(DB_PASSWORD_LOCAL);
+        dataSource.setUrl(DB_CONNECTION_PROD);
+        dataSource.setUsername(DB_USER_PROD);
+        dataSource.setPassword(DB_PASSWORD_PROD);
         return dataSource;
     }
 

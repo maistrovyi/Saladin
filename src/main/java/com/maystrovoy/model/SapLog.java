@@ -26,8 +26,6 @@ public class SapLog implements Serializable {
     private Date finishDate;
     @Column(name = "MESSAGE")
     private String message;
-    @Column(name = "USERNAME")
-    private String userName;
 
     public SapLog() {
     }

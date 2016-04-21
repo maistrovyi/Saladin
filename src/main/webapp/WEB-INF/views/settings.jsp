@@ -5,10 +5,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Saladin | Settings</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/settings_style.css">
-    <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/general_style.css">
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/button_menu.css">
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/settings_style.css">
+    <link rel="shortcut icon" href="/saladin/resources/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <jsp:include page="header.jsp"/>

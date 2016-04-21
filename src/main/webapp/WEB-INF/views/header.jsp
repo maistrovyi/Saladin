@@ -6,25 +6,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Saladin</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/general_style.css">
 </head>
 <body>
 <div id="user_panel">
     <div id="user_info">
         <h3>User: ${person.loginName}</h3>
-        <p><h3><a href="/signout">Log out</a></h3></p>
+        <p><h3><a href="/saladin/signout">Log out</a></h3></p>
     </div>
 </div>
 <nav id="nav">
     <div id="logo">
-        <img src="/resources/images/logo.png" width="365" height="200"/>
+        <img src="/saladin/resources/images/logo.png" width="365" height="200"/>
     </div>
     <div id="menu">
         <c:forEach items="${person.getMenuItems()}" var="role" varStatus="loop">
-            <li><a href="${role.getMenuType()}">${role.getMenuName()}</a></li>
+            <li><a href="/saladin${role.getMenuType()}">${role.getMenuName()}</a></li>
         </c:forEach>
     </div>
 </nav>
-<script type="text/javascript" src="/resources/js/active.js"></script>
+<script type="text/javascript" src="/saladin/resources/js/active.js"></script>
 </body>
 </html>

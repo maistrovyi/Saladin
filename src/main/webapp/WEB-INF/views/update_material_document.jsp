@@ -4,10 +4,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>MD Update | Saladin</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/general_style.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/button_menu.css">
-    <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="/resources/js/disabledSubmitButton.js"></script>
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/general_style.css">
+    <link rel="stylesheet" type="text/css" href="/saladin/resources/css/button_menu.css">
+    <link rel="shortcut icon" href="/saladin/resources/images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="/saladin/resources/js/disabledSubmitButton.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
