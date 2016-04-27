@@ -45,16 +45,10 @@ public class PasswordChangingDataValidator implements Validator {
                         !newPassword.equals(repeatPassword)) {
                     error.rejectValue("repeatPassword", "personerr.password.repeat", "Password error");
                 }
-                try {
-                    if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
-                            PersonService.getHashedPassword(newPassword,
-                                    person.getCreationDay()).equals(person.getPassword())) {
-                        error.rejectValue("newPassword", "personerr.password.equals", "Required field");
-                    }
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                if (!error.hasFieldErrors("newPassword") && !error.hasFieldErrors("repeatPassword") &&
+                        PersonService.getHashedPassword(newPassword,
+                                person.getCreationDay()).equals(person.getPassword())) {
+                    error.rejectValue("newPassword", "personerr.password.equals", "Required field");
                 }
 
             }

@@ -7,4 +7,5 @@ public abstract class AbstractFactory {
     public abstract Object createInstance(String targetObject, String userName, int objectType);
 
     public abstract SapLog createInstance(String targetObject);
+
 }

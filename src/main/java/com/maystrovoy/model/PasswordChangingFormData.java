@@ -51,4 +51,5 @@ public class PasswordChangingFormData {
     public void setRepeatPassword(String repeatPassword) {
         this.repeatPassword = repeatPassword;
     }
+
 }
