@@ -2,7 +2,7 @@
 <Configuration status="trace">
     <Appenders>
         <RollingFile name="RollingFile" fileName="${sys:catalina.home}/logs/Saladin-${date:yyyy-MM-dd}.log"
-                     filePattern="${sys:catalina.home}/logs/Saladin-%d{yyyy-MM-dd}.log">
+                     filePattern="${sys:catalina.home}/logs/Saladin-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <pattern>%d{DEFAULT} | - |%method| %c{1}: %m%n</pattern>
             </PatternLayout>
