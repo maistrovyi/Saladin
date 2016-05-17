@@ -19,11 +19,6 @@ import java.util.Properties;
 public class ApplicationConfig {
 
     /*to change the settings of database connection - change these settings*/
-    /*Test DataBase settings*/
-//    public static final String DB_CONNECTION_TEST = "jdbc:Oracle:thin:@10.1.32.39:1521:MAXIMO2T";
-//    public static final String DB_USER_TEST = "MXSAP";
-//    public static final String DB_PASSWORD_TEST = "INTEGRATION";
-
     /*Personal Test DataBase settings*/
 //    public static final String DB_CONNECTION_LOCAL = "jdbc:oracle:thin:@//localhost:1521/XE";
 //    public static final String DB_USER_LOCAL = "maystrovoy";
